@@ -90,8 +90,8 @@ export function iniciar(datos: Datos): void {
 
     const actual = $pasos.querySelector('[aria-current="step"]')?.getAttribute('href') ?? '';
     $pasos.innerHTML = progreso(vista, datos).map((p) => `
-      <a class="paso${p.hecho ? ' hecho' : ''}" href="#${p.id}"${attrs({ 'aria-current': actual === `#${p.id}` ? 'step' : null })}>
-        <span class="n">${p.hecho ? icono('check') : p.n}</span><span class="t">${e(p.nombre)}</span>${p.hecho ? `<span class="sr"> (completado)</span>` : ''}</a>`).join('');
+      <a class="paso${p.hecho ? ' hecho' : ''}" href="#${p.id}"${attrs({ 'aria-current': actual === `#${p.id}` ? 'step' : null, 'aria-label': t(p.hecho ? 'app.paso_hecho' : 'app.paso', { n: p.n, nombre: p.nombre }) })}>
+        <span class="n">${p.hecho ? icono('check') : p.n}</span><span class="t">${e(p.nombre)}</span></a>`).join('');
     el('copiar-movil').setAttribute('aria-disabled', String(bloqueoActual !== ''));
   }
 
@@ -342,7 +342,10 @@ export function iniciar(datos: Datos): void {
     $tema.setAttribute('aria-pressed', String(oscuro));
     $tema.querySelector('use')?.setAttribute('href', oscuro ? '#i-sun' : '#i-moon');
     const etiqueta = $tema.querySelector('.lbl');
-    if (etiqueta) etiqueta.textContent = t(oscuro ? 'app.tema_claro' : 'app.tema_oscuro');
+    const texto = t(oscuro ? 'app.tema_claro' : 'app.tema_oscuro');
+    if (etiqueta) etiqueta.textContent = texto;
+    // En móvil el texto del botón se oculta: el nombre accesible va en aria-label.
+    $tema.setAttribute('aria-label', texto);
   }
   $tema.addEventListener('click', () => {
     const nuevo: Tema = temaActual() === 'dark' ? 'light' : 'dark';

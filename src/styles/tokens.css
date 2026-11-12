@@ -4,6 +4,23 @@
   mismos salvo los marcados con «AJUSTE», que se oscurecen para cumplir WCAG 2.2 AA
   (contraste ≥ 4,5:1 en texto pequeño sobre su fondo suave).
 */
+/* Tipografía: Atkinson Hyperlegible (Braille Institute), alojada en el propio sitio bajo
+   licencia SIL OFL 1.1 (fonts/OFL.txt). No se carga nada de servidores externos. */
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./fonts/atkinson-hyperlegible-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./fonts/atkinson-hyperlegible-latin-700-normal.woff2") format("woff2");
+}
+
 :root {
   /* Superficies y texto */
   --bg: #f3f5fa;
@@ -35,8 +52,8 @@
   --logo-3: #ffcf5c;
   --logo-4: #ff8a7d;
 
-  /* Tipografía: pila del sistema, como en Mesures */
-  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* Tipografía: Atkinson Hyperlegible, con la pila del sistema como reserva */
+  --font: "Atkinson Hyperlegible", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
   --fs-xs: 12.5px;   /* pie, notas */
   --fs-sm: 14px;     /* etiquetas, botones pequeños, chips grandes */

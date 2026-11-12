@@ -112,5 +112,7 @@
   "compartir.boton": "Copiar enlace",
   "compartir.copiado": "Enlace copiado. No incluye tus textos.",
   "compartir.no_copiado": "No se ha podido copiar el enlace.",
-  "compartir.cargado": "Se ha cargado la configuración del enlace."
+  "compartir.cargado": "Se ha cargado la configuración del enlace.",
+  "app.paso": "Paso {n}: {nombre}",
+  "app.paso_hecho": "Paso {n}: {nombre} (completado)"
 }
