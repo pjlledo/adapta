@@ -21,3 +21,5 @@ dist/
 
 # Encargo original (documento de trabajo, no se publica)
 SPEC_orienteca_adapta.md
+
+node_modules.nosync/

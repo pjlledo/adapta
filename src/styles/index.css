@@ -1,0 +1,4 @@
+/* Estilos de la app, en orden: tokens, componentes y disposición. */
+@import './tokens.css';
+@import './componentes.css';
+@import './app.css';
