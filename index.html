@@ -13,6 +13,10 @@
 <meta name="description" content="Genera un prompt para que tu herramienta de IA adapte una actividad, una situación de aprendizaje o una prueba con DUA y las medidas de respuesta educativa para la inclusión. Funciona en el navegador: no se envía ningún dato.">
 <meta name="theme-color" content="#1d3a7a">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231d3a7a'/%3E%3Crect x='6' y='6' width='9' height='9' rx='2' fill='%237fa2ff'/%3E%3Crect x='17' y='6' width='9' height='9' rx='2' fill='%236fd49a'/%3E%3Crect x='6' y='17' width='9' height='9' rx='2' fill='%23ffcf5c'/%3E%3Crect x='17' y='17' width='9' height='9' rx='2' fill='%23ff8a7d'/%3E%3C/svg%3E">
+<script>
+  // Aplica el tema guardado antes de pintar, para evitar un destello.
+  try { var tema = localStorage.getItem('adapta.tema'); if (tema === 'dark' || tema === 'light') document.documentElement.dataset.theme = tema; } catch (e) {}
+</script>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -27,6 +31,9 @@
   <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 15a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z"/></symbol>
   <symbol id="i-clip" viewBox="0 0 24 24"><path d="m20 11-8.5 8.5a5 5 0 0 1-7-7L13 4a3.3 3.3 0 0 1 4.7 4.7l-8.5 8.5a1.7 1.7 0 0 1-2.4-2.4L14.5 7"/></symbol>
   <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3 10 14M21 3l-7 18-4-7-7-4z"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></symbol>
   <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></symbol>
 </svg>
 
@@ -43,6 +50,7 @@
         <button type="button" aria-pressed="true">ES</button>
         <button type="button" aria-pressed="false" disabled data-t-title="app.va_pronto">VA</button>
       </div>
+      <button type="button" class="btn ghost sm" id="tema" aria-pressed="false"><svg class="i" aria-hidden="true"><use href="#i-moon"/></svg><span class="lbl" data-t="app.tema_oscuro"></span></button>
     </div>
   </div>
   <div class="wrap niveles">

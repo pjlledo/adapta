@@ -119,3 +119,19 @@ footer.pie { margin-bottom: 90px; }
 body { overflow-x: clip; }
 /* La etiqueta «Sugerida por…» va en su propia línea y puede ocupar varias */
 .medida .chip.sug, .medidas-lectura .chip.sug { display: block; width: fit-content; margin-top: 4px; border-radius: 10px; padding: 3px 9px; }
+
+/* Guardar y compartir */
+.guardar > h2 { margin-bottom: 4px; }
+.guardar h3 { font-size: 14px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); margin: 0 0 6px; }
+.fila-guardar { display: flex; gap: var(--sp-2); margin-bottom: 6px; }
+.fila-guardar input { flex: 1; min-width: 0; }
+.guardadas { list-style: none; margin: 0; padding: 0; }
+.guardadas li { display: flex; align-items: center; gap: var(--sp-2); padding: 8px 0; border-top: 1px solid var(--border); }
+.guardadas li:first-child { border-top: 0; }
+.guardadas .nombre { flex: 1; min-width: 0; overflow-wrap: anywhere; font-weight: 600; }
+.compartir { padding-top: var(--sp-4); border-top: 1px solid var(--border); }
+.compartir .hint { margin: 0 0 10px; }
+
+/* El aviso emergente no debe recibir el foco cuando está oculto */
+.toast.flotante { visibility: hidden; }
+.toast.flotante.show { visibility: visible; }

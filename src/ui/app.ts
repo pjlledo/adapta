@@ -2,7 +2,10 @@
 import type { Config, Datos, NivelId, Valor } from '../engine/index.ts';
 import { avisos, cambiarNivel, componer, configInicial, copiaBloqueada, resolver } from '../engine/index.ts';
 import { t } from '../i18n/index.ts';
-import { guardarNivel, leerNivel } from '../almacenamiento/local.ts';
+import { MAX_GUARDADAS, escribirGuardadas, guardarNivel, guardarTema, leerGuardadas, leerNivel, leerTema } from '../almacenamiento/local.ts';
+import type { Tema } from '../almacenamiento/local.ts';
+import { codificar, decodificar, sanear, sinTextosLibres } from '../almacenamiento/enlace.ts';
+import { guardarHtml } from './guardar.ts';
 import { avisoDetector, formulario, progreso } from './formulario.ts';
 import type { Vista } from './formulario.ts';
 import { contarPalabras, panel } from './panel.ts';
@@ -23,6 +26,9 @@ export function iniciar(datos: Datos): void {
   const $toastBtn = el<HTMLButtonElement>('toast-btn');
 
   let estado: Estado = { config: { ...configInicial(datos), nivel: leerNivel() ?? 'basico' }, privacidad: {}, manual: null };
+  let guardadas = leerGuardadas();
+  let nombreGuardar = '';
+  let conTextos = false;
   let promptActual = '';
   let bloqueoActual = '';
 
@@ -71,7 +77,7 @@ export function iniciar(datos: Datos): void {
       : r.curso === null ? t('panel.falta_curso')
       : faltaPrivacidad ? t('panel.falta_privacidad') : '';
 
-    if (conFormulario) { sustituir($form, formulario(vista, datos)); observarPasos(); }
+    if (conFormulario) { sustituir($form, formulario(vista, datos) + guardarHtml({ nivel: r.nivel, guardadas, nombre: nombreGuardar, conTextos })); observarPasos(); }
     sustituir($panel, panel({
       prompt: promptActual,
       avisos: avisos(estado.config, datos, r),
@@ -151,6 +157,7 @@ export function iniciar(datos: Datos): void {
     else if (k === 'campo') fijarCampo(id, x instanceof HTMLSelectElement ? (x.value || null) : marcado);
     else if (k === 'salida') cambiar({ salidas: { ...estado.config.salidas, [id]: marcado } });
     else if (k === 'priv') estado = { ...estado, privacidad: { ...estado.privacidad, [id]: marcado } };
+    else if (k === 'guardar-textos') { conTextos = marcado; return; }
     else return;
     pintar();
   });
@@ -161,6 +168,7 @@ export function iniciar(datos: Datos): void {
     if (!esTexto(x)) return;
     const k = x.dataset.k;
     const id = x.dataset.id ?? '';
+    if (k === 'guardar-nombre') { nombreGuardar = x.value; return; }
     if (k === 'campo') fijarCampo(id, x.value);
     else if (k === 'personalizado') cambiar({ perfil_personalizado: x.value });
     else if (k === 'var') fijarVariable(id, x.type === 'number' ? (x.value === '' ? null : Number(x.value)) : x.value);
@@ -170,19 +178,66 @@ export function iniciar(datos: Datos): void {
     pintar(false);
   });
 
-  $form.addEventListener('click', (ev) => {
-    const boton = (ev.target as HTMLElement).closest<HTMLElement>('[data-k="preset"]');
-    if (!boton) return;
-    const preset = datos.presets.find((p) => p.id === boton.dataset.id);
+  function aplicarConfig(config: Config): void {
+    estado = { ...estado, config, manual: null };
+    guardarNivel(config.nivel);
+    pintarNiveles();
+    pintar();
+  }
+
+  function aplicarPreset(idPreset: string): void {
+    const preset = datos.presets.find((p) => p.id === idPreset);
     if (!preset) return;
     const anterior = estado;
     const base = configInicial(datos);
-    estado = { ...estado, manual: null, config: { ...base, nivel: estado.config.nivel, ...preset.config, variables: preset.config.variables ?? {}, salidas: Object.fromEntries((preset.config.salidas ?? []).map((s) => [s, true])) } };
+    estado = { ...estado, manual: null, config: { ...base, nivel: estado.config.nivel, ...preset.config, variables: preset.config.variables ?? {}, salidas: Object.fromEntries((preset.config.salidas ?? []).map((x) => [x, true])) } };
     pintar();
     avisar(t('paso0.aplicado'), () => { estado = anterior; pintar(); });
     const destino = document.getElementById(preset.campos_a_revisar[0] ?? '');
     destino?.scrollIntoView({ block: 'center' });
     destino?.focus({ preventScroll: true });
+  }
+
+  function guardarActual(): void {
+    const nombre = nombreGuardar.trim();
+    if (!nombre) { avisar(t('guardar.falta_nombre')); document.getElementById('guardar-nombre')?.focus(); return; }
+    const config = conTextos ? estado.config : sinTextosLibres(estado.config, datos);
+    const existente = guardadas.findIndex((g) => g.nombre === nombre);
+    if (existente === -1 && guardadas.length >= MAX_GUARDADAS) { avisar(t('guardar.llena', { n: MAX_GUARDADAS })); return; }
+    const anterior = guardadas;
+    const nueva = { nombre, conTextos, config };
+    const lista = existente === -1 ? [nueva, ...guardadas] : guardadas.map((g, i) => (i === existente ? nueva : g));
+    if (!escribirGuardadas(lista)) { avisar(t('guardar.error')); return; }
+    guardadas = lista;
+    nombreGuardar = '';
+    pintar();
+    avisar(t(existente === -1 ? 'guardar.hecho' : 'guardar.sustituida', { nombre }), () => { guardadas = anterior; escribirGuardadas(anterior); pintar(); });
+  }
+
+  $form.addEventListener('click', async (ev) => {
+    const boton = (ev.target as HTMLElement).closest<HTMLElement>('button[data-k]');
+    if (!boton) return;
+    const k = boton.dataset.k;
+    const indice = Number(boton.dataset.id);
+    if (k === 'preset') aplicarPreset(boton.dataset.id ?? '');
+    else if (k === 'guardar') guardarActual();
+    else if (k === 'cargar' && guardadas[indice]) {
+      const anterior = estado;
+      const g = guardadas[indice];
+      aplicarConfig(sanear(g.config, datos, g.conTextos));
+      avisar(t('guardar.cargada', { nombre: g.nombre }), () => { estado = anterior; guardarNivel(anterior.config.nivel); pintarNiveles(); pintar(); });
+    } else if (k === 'borrar' && guardadas[indice]) {
+      const anterior = guardadas;
+      const nombre = guardadas[indice].nombre;
+      guardadas = guardadas.filter((_, i) => i !== indice);
+      escribirGuardadas(guardadas);
+      pintar();
+      document.getElementById('guardar-nombre')?.focus();
+      avisar(t('guardar.borrada', { nombre }), () => { guardadas = anterior; escribirGuardadas(anterior); pintar(); });
+    } else if (k === 'compartir') {
+      const url = `${location.origin}${location.pathname}#${codificar(estado.config, datos)}`;
+      avisar((await copiar(url)) ? t('compartir.copiado') : t('compartir.no_copiado'));
+    }
   });
 
   /* ---------- Niveles ---------- */
@@ -277,6 +332,38 @@ export function iniciar(datos: Datos): void {
     el('prompt-palabras').textContent = t('panel.palabras', { n: contarPalabras(x.value) });
   });
 
+  /* ---------- Tema claro u oscuro ---------- */
+
+  const $tema = el<HTMLButtonElement>('tema');
+  const temaActual = (): Tema => (document.documentElement.dataset.theme as Tema | undefined)
+    ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  function pintarTema(): void {
+    const oscuro = temaActual() === 'dark';
+    $tema.setAttribute('aria-pressed', String(oscuro));
+    $tema.querySelector('use')?.setAttribute('href', oscuro ? '#i-sun' : '#i-moon');
+    const etiqueta = $tema.querySelector('.lbl');
+    if (etiqueta) etiqueta.textContent = t(oscuro ? 'app.tema_claro' : 'app.tema_oscuro');
+  }
+  $tema.addEventListener('click', () => {
+    const nuevo: Tema = temaActual() === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = nuevo;
+    guardarTema(nuevo);
+    pintarTema();
+  });
+  const temaGuardado = leerTema();
+  if (temaGuardado) document.documentElement.dataset.theme = temaGuardado;
+  pintarTema();
+
+  /* ---------- Configuración recibida por enlace ---------- */
+
+  const compartida = decodificar(location.hash, datos);
+  if (compartida) {
+    estado = { ...estado, config: compartida };
+    guardarNivel(compartida.nivel);
+    history.replaceState(null, '', location.pathname + location.search);
+  }
+
   pintarNiveles();
   pintar();
+  if (compartida) avisar(t('compartir.cargado'));
 }
