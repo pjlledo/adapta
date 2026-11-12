@@ -1,0 +1,47 @@
+[
+  {
+    "id": "basico",
+    "nivel_minimo": "basico",
+    "orden": 1,
+    "nombre": "Básico",
+    "descripcion": "Elige curso y perfil; Adapta hace el resto.",
+    "ayuda": "Pensado para quien nunca ha usado una IA para adaptar materiales. Adapta decide las medidas a partir de los perfiles que elijas y te muestra cuáles aplicará.",
+    "max_perfiles": 2,
+    "medidas_editables": false,
+    "avisos_visibles": ["critico"],
+    "detalle_normativo_desplegado": false,
+    "edicion_manual": false,
+    "guardar_configuraciones": false,
+    "compartir_enlace": false
+  },
+  {
+    "id": "avanzado",
+    "nivel_minimo": "basico",
+    "orden": 2,
+    "nombre": "Avanzado",
+    "descripcion": "Decide qué medidas aplicar y qué quieres recibir.",
+    "ayuda": "Puedes marcar y desmarcar medidas, indicar los criterios de evaluación que deben mantenerse, describir el documento y elegir qué te entrega la IA.",
+    "max_perfiles": null,
+    "medidas_editables": true,
+    "avisos_visibles": ["critico", "aviso", "info"],
+    "detalle_normativo_desplegado": false,
+    "edicion_manual": false,
+    "guardar_configuraciones": true,
+    "compartir_enlace": false
+  },
+  {
+    "id": "experto",
+    "nivel_minimo": "basico",
+    "orden": 3,
+    "nombre": "Experto",
+    "descripcion": "Control total de la adaptación, la maquetación y el prompt.",
+    "ayuda": "Añade parámetros finos (tipografía, número de ítems, tiempo, extensión), especificaciones de maquetación, un perfil personalizado y la edición manual del prompt.",
+    "max_perfiles": null,
+    "medidas_editables": true,
+    "avisos_visibles": ["critico", "aviso", "info"],
+    "detalle_normativo_desplegado": true,
+    "edicion_manual": true,
+    "guardar_configuraciones": true,
+    "compartir_enlace": true
+  }
+]

@@ -1,0 +1,127 @@
+[
+  {
+    "id": "infantil_prueba_escrita",
+    "nivel_minimo": "basico",
+    "severidad": "critico",
+    "bloquea_copiar": false,
+    "condicion": { "todas": [
+      { "campo": "etapa", "igual": "infantil" },
+      { "campo": "tipo_material", "igual": "prueba_escrita" }
+    ] },
+    "mensaje": "En Educación Infantil la evaluación es global, continua y formativa, y se basa en la observación. Una prueba escrita no es un instrumento adecuado en esta etapa.",
+    "accion": { "tipo": "cambiar_tipo_material", "valor": "instrumento_evaluacion", "etiqueta": "Cambiar a «Instrumento de evaluación alternativo»" },
+    "referencia_normativa": "Decreto 100/2022, del Consell, de ordenación y currículo de la Educación Infantil.",
+    "detalle_normativo": "La evaluación en Educación Infantil es global, continua y formativa. La observación directa y sistemática es la técnica principal del proceso de evaluación.",
+    "revisar": true
+  },
+  {
+    "id": "primer_ciclo_prueba_escrita",
+    "nivel_minimo": "basico",
+    "severidad": "aviso",
+    "bloquea_copiar": false,
+    "condicion": { "todas": [
+      { "campo": "ciclo", "igual": "pri_c1" },
+      { "campo": "tipo_material", "igual": "prueba_escrita" },
+      { "no": { "campo": "variables_activas", "incluye": "instrumentos_alternativos" } }
+    ] },
+    "mensaje": "En 1.er ciclo de Primaria se priorizan la observación, los registros, las entrevistas orales y las rúbricas. En 2.º y 3.er ciclo las pruebas escritas son puntuales y nunca el único instrumento.",
+    "accion": { "tipo": "activar_variable", "valor": "instrumentos_alternativos", "etiqueta": "Proponer instrumentos alternativos o complementarios" },
+    "referencia_normativa": "Decreto 106/2022, del Consell, modificado por el Decreto 96/2026.",
+    "detalle_normativo": "Según el Decreto 96/2026, en el primer ciclo se priorizan la observación, los registros, las entrevistas orales y las rúbricas; en el segundo y tercer ciclo las pruebas escritas son puntuales y no pueden ser el único instrumento de evaluación.",
+    "revisar": true
+  },
+  {
+    "id": "acis_sin_nivel_referencia",
+    "nivel_minimo": "basico",
+    "severidad": "critico",
+    "bloquea_copiar": true,
+    "condicion": { "todas": [
+      { "campo": "adaptacion", "igual": "acis" },
+      { "campo": "nivel_referencia", "vacio": true }
+    ] },
+    "mensaje": "Falta el curso o nivel de referencia curricular. La ACIS es una medida de nivel IV que requiere evaluación sociopsicopedagógica y consta en el PAP: indica el nivel de referencia que figura en él.",
+    "accion": { "tipo": "ir_a_campo", "valor": "nivel_referencia", "etiqueta": "Indicar el nivel de referencia" },
+    "referencia_normativa": "Orden 20/2019, art. 20.",
+    "detalle_normativo": "La adaptación curricular individual significativa (ACIS) es una medida de respuesta de nivel IV. Requiere evaluación sociopsicopedagógica previa y debe constar en el plan de actuación personalizado (PAP).",
+    "revisar": true
+  },
+  {
+    "id": "criterios_desactivados_sin_acis",
+    "nivel_minimo": "basico",
+    "severidad": "critico",
+    "bloquea_copiar": true,
+    "condicion": { "todas": [
+      { "campo": "adaptacion", "distinto": "acis" },
+      { "campo": "mantener_criterios", "igual": false }
+    ] },
+    "mensaje": "En el diseño para el grupo (nivel II) y en la adecuación personalizada (nivel III) no se pueden modificar los criterios de evaluación ni los saberes básicos.",
+    "accion": { "tipo": "activar_variable", "valor": "mantener_criterios", "etiqueta": "Volver a mantener los criterios" },
+    "referencia_normativa": "Decreto 104/2018, art. 14; Orden 20/2019.",
+    "detalle_normativo": "Solo las medidas de nivel IV, como la ACIS, modifican los elementos prescriptivos del currículo, y requieren evaluación sociopsicopedagógica.",
+    "revisar": true
+  },
+  {
+    "id": "altas_capacidades_simplificacion",
+    "nivel_minimo": "basico",
+    "severidad": "aviso",
+    "bloquea_copiar": false,
+    "condicion": { "todas": [
+      { "campo": "perfiles", "incluye": "altas_capacidades" },
+      { "campo": "variables_activas", "incluye_alguno": ["lenguaje_claro", "simplificar_enunciados", "max_items", "reducir_escritura"] }
+    ] },
+    "mensaje": "Has combinado altas capacidades con medidas de simplificación o de reducción. Puede ser una contradicción, o puede tratarse de doble excepcionalidad (altas capacidades junto con otra necesidad). Revisa que es lo que quieres.",
+    "referencia_normativa": "",
+    "detalle_normativo": "",
+    "revisar": true
+  },
+  {
+    "id": "demasiadas_medidas",
+    "nivel_minimo": "basico",
+    "severidad": "aviso",
+    "bloquea_copiar": false,
+    "condicion": { "campo": "n_medidas", "mayor_que": 12 },
+    "mensaje": "Hay más de 12 medidas activas. Con tantas instrucciones la IA suele aplicar algunas a medias: prioriza las que más reducen las barreras.",
+    "referencia_normativa": "",
+    "detalle_normativo": "",
+    "revisar": true
+  },
+  {
+    "id": "datos_personales",
+    "nivel_minimo": "basico",
+    "severidad": "aviso",
+    "bloquea_copiar": false,
+    "condicion": { "campo": "datos_personales", "igual": true },
+    "mensaje": "Alguno de los textos que has escrito parece contener datos personales (DNI o NIE, NIA, correo, teléfono o fecha de nacimiento). Bórralos antes de copiar el prompt.",
+    "referencia_normativa": "Reglamento (UE) 2016/679 (RGPD) y Ley Orgánica 3/2018 (LOPDGDD).",
+    "detalle_normativo": "",
+    "revisar": true
+  },
+  {
+    "id": "grupo_muchos_perfiles",
+    "nivel_minimo": "basico",
+    "severidad": "info",
+    "bloquea_copiar": false,
+    "condicion": { "todas": [
+      { "campo": "adaptacion", "igual": "grupo" },
+      { "campo": "n_perfiles", "minimo": 4 },
+      { "no": { "campo": "salidas", "incluye": "multinivel" } }
+    ] },
+    "mensaje": "Con cuatro o más perfiles en el aula, un único documento puede quedarse corto. Considera pedir la versión multinivel (tres niveles de apoyo).",
+    "mensaje_sin_nivel": "Con cuatro o más perfiles en el aula, un único documento puede quedarse corto. En el nivel Experto puedes pedir una versión multinivel.",
+    "accion": { "tipo": "activar_salida", "valor": "multinivel", "etiqueta": "Pedir versión multinivel" },
+    "referencia_normativa": "",
+    "detalle_normativo": "",
+    "revisar": true
+  },
+  {
+    "id": "foto_escaneo",
+    "nivel_minimo": "basico",
+    "severidad": "info",
+    "bloquea_copiar": false,
+    "condicion": { "campo": "tipo_archivo", "igual": "foto" },
+    "mensaje": "Haz la foto nítida, recta y con buena luz, y comprueba que no aparece ninguna persona ni otros datos.",
+    "referencia_normativa": "",
+    "detalle_normativo": "",
+    "revisar": true
+  }
+]

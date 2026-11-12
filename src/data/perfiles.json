@@ -1,0 +1,445 @@
+{
+  "ayuda": "Elige el perfil por las barreras que observas; no hace falta un diagnóstico para aplicar medidas de nivel II o III.",
+  "grupos": [
+    { "id": "neae_nee", "nivel_minimo": "basico", "nombre": "NEAE y NEE" },
+    { "id": "altas_capacidades", "nivel_minimo": "basico", "nombre": "Altas capacidades" },
+    { "id": "desventaja", "nivel_minimo": "basico", "nombre": "Desventaja e incorporación al sistema" },
+    { "id": "bienestar", "nivel_minimo": "basico", "nombre": "Bienestar emocional y conducta" },
+    { "id": "otros", "nivel_minimo": "experto", "nombre": "Otros" }
+  ],
+  "perfiles": [
+    {
+      "id": "dislexia",
+      "nivel_minimo": "basico",
+      "nombre": "Dificultades específicas en lectura y escritura (dislexia, disortografía)",
+      "nombre_prompt": "Dificultades específicas de aprendizaje en lectura y escritura (dislexia, disortografía)",
+      "grupo": "neae_nee",
+      "descripcion_docente": "Lee despacio o con errores, se cansa con textos largos y comete muchas faltas al escribir.",
+      "barreras": [
+        "Textos largos o densos y enunciados con varias instrucciones seguidas.",
+        "Tareas en las que hay que leer mucho para poder demostrar lo que se sabe.",
+        "Respuestas que exigen redactar a mano y en las que se penaliza la ortografía."
+      ],
+      "estrategias_para_ia": [
+        "Usa frases cortas en voz activa.",
+        "Reduce la cantidad de lectura necesaria para responder, sin reducir lo que se evalúa.",
+        "No propongas penalizar la ortografía, salvo que sea el criterio que se evalúa."
+      ],
+      "evitar": [
+        "Evita los textos densos, las cursivas y las palabras o frases enteras en mayúsculas.",
+        "Evita las dobles negaciones."
+      ],
+      "variables_preseleccionadas": [
+        "consigna_por_frase",
+        "palabras_clave_negrita",
+        "glosario",
+        "reducir_escritura",
+        { "id": "tipografia", "valor": "ampliada" },
+        { "id": "formatos_respuesta", "valor": ["oral", "seleccion_multiple"] },
+        "evitar_dobles_negaciones"
+      ],
+      "nota_docente": "Las fuentes «para dislexia» son opcionales: su eficacia tiene escasa evidencia.",
+      "revisar": true
+    },
+    {
+      "id": "discalculia",
+      "nivel_minimo": "basico",
+      "nombre": "Dificultades específicas en matemáticas (discalculia)",
+      "nombre_prompt": "Dificultades específicas de aprendizaje en matemáticas (discalculia)",
+      "grupo": "neae_nee",
+      "descripcion_docente": "Le cuesta el sentido numérico, el cálculo y seguir los pasos de un problema.",
+      "barreras": [
+        "Ejercicios que mezclan razonamiento y cálculo sin separarlos.",
+        "Problemas con datos irrelevantes o con muchos pasos sin guía.",
+        "Cálculo mental o escrito sin apoyos cuando el cálculo no es lo que se evalúa."
+      ],
+      "estrategias_para_ia": [
+        "Añade apoyos visuales y manipulativos al cálculo: recta numérica, tablas o representación con bloques.",
+        "Separa en cada problema la parte de razonamiento de la parte de cálculo.",
+        "Permite usar las tablas o la calculadora cuando el cálculo no sea el criterio que se evalúa.",
+        "Elimina de los problemas los datos irrelevantes."
+      ],
+      "evitar": [
+        "Evita los problemas con datos que no hacen falta para resolverlos."
+      ],
+      "variables_preseleccionadas": [
+        "consigna_por_frase",
+        "apoyos_visuales",
+        "ejemplo_resuelto",
+        { "id": "materiales_apoyo", "valor": ["tablas", "recta_numerica"] }
+      ],
+      "revisar": true
+    },
+    {
+      "id": "tdah",
+      "nivel_minimo": "basico",
+      "nombre": "TDAH o dificultades de atención y autorregulación",
+      "nombre_prompt": "TDAH o dificultades de atención y autorregulación",
+      "grupo": "neae_nee",
+      "descripcion_docente": "Le cuesta mantener la atención, organizarse y terminar tareas largas.",
+      "barreras": [
+        "Instrucciones largas al inicio y páginas con mucha información.",
+        "Tareas largas sin metas intermedias ni referencia de tiempo.",
+        "Ejercicios repetitivos y consignas que hay que recordar de ejercicios anteriores."
+      ],
+      "estrategias_para_ia": [
+        "Organiza el documento en bloques breves, cada uno con un solo objetivo, y pon una actividad por bloque o por página.",
+        "Indica un tiempo orientativo para cada bloque.",
+        "Reduce los ítems repetitivos manteniendo la variedad de lo que se evalúa.",
+        "Sugiere en las notas para el docente dónde hacer pausas."
+      ],
+      "evitar": [
+        "Evita las instrucciones largas al inicio del documento.",
+        "Evita las páginas recargadas.",
+        "Evita las consignas que obligan a recordar lo dicho en ejercicios anteriores: repite la instrucción donde haga falta."
+      ],
+      "variables_preseleccionadas": [
+        "consigna_por_frase",
+        "palabras_clave_negrita",
+        "checklist_autorregulacion",
+        "una_pregunta_por_bloque"
+      ],
+      "revisar": true
+    },
+    {
+      "id": "tea",
+      "nivel_minimo": "basico",
+      "nombre": "TEA (trastorno del espectro del autismo)",
+      "nombre_prompt": "Trastorno del espectro del autismo (TEA)",
+      "grupo": "neae_nee",
+      "descripcion_docente": "Necesita saber qué hay que hacer, cuánto y cuándo termina; entiende el lenguaje de forma literal.",
+      "barreras": [
+        "Consignas implícitas o ambiguas y preguntas abiertas sin límites claros.",
+        "Lenguaje figurado: ironía, metáforas y dobles sentidos.",
+        "Tareas sin una estructura visible ni un final claro."
+      ],
+      "estrategias_para_ia": [
+        "Da al documento una estructura predecible y visible: qué hay que hacer, cuánto y cuándo se termina.",
+        "Usa lenguaje literal y concreto.",
+        "Indica de forma explícita cuándo está terminada cada tarea."
+      ],
+      "evitar": [
+        "Evita la ironía, las metáforas y los dobles sentidos que no se hayan trabajado.",
+        "Evita las preguntas abiertas ambiguas y las consignas implícitas."
+      ],
+      "variables_preseleccionadas": [
+        "consigna_por_frase",
+        "apoyos_visuales",
+        "ejemplo_resuelto",
+        "evitar_dobles_negaciones"
+      ],
+      "revisar": true
+    },
+    {
+      "id": "tdl",
+      "nivel_minimo": "basico",
+      "nombre": "Trastorno del desarrollo del lenguaje (TDL) y dificultades de comunicación",
+      "nombre_prompt": "Trastorno del desarrollo del lenguaje (TDL) y dificultades de comunicación",
+      "grupo": "neae_nee",
+      "descripcion_docente": "Le cuesta comprender frases largas y expresar lo que sabe con palabras.",
+      "barreras": [
+        "Vocabulario nuevo sin apoyo y frases largas con subordinadas.",
+        "Respuestas abiertas que exigen redactar o explicar oralmente sin modelo."
+      ],
+      "estrategias_para_ia": [
+        "Presenta el vocabulario clave antes de la tarea, con apoyo visual.",
+        "Usa frases simples, sin subordinadas encadenadas.",
+        "Plantea preguntas cerradas o semiabiertas antes de las abiertas."
+      ],
+      "evitar": [
+        "Evita las frases con varias subordinadas encadenadas."
+      ],
+      "variables_preseleccionadas": [
+        "simplificar_enunciados",
+        "glosario",
+        "apoyos_visuales",
+        "plantillas_frase"
+      ],
+      "revisar": true
+    },
+    {
+      "id": "discapacidad_intelectual",
+      "nivel_minimo": "basico",
+      "nombre": "Discapacidad intelectual",
+      "nombre_prompt": "Discapacidad intelectual",
+      "grupo": "neae_nee",
+      "descripcion_docente": "Aprende mejor con contenidos concretos y funcionales, mucha práctica guiada y apoyos visuales.",
+      "barreras": [
+        "Contenidos abstractos o alejados de su experiencia.",
+        "Muchas tareas distintas en un mismo documento, con poca práctica de cada una.",
+        "Textos largos y vocabulario poco frecuente."
+      ],
+      "estrategias_para_ia": [
+        "Presenta los contenidos de forma funcional y contextualizada en situaciones cotidianas.",
+        "Plantea las tareas como aprendizaje sin error: empieza con apoyos y retíralos poco a poco.",
+        "Propón pocas tareas, con mucha práctica guiada de cada una.",
+        "Si el material es para alumnado con ACIS, ajusta los contenidos al nivel de referencia curricular indicado."
+      ],
+      "evitar": [
+        "Evita presentar muchos tipos de tarea distintos en un mismo documento."
+      ],
+      "variables_preseleccionadas": [
+        "lenguaje_claro",
+        "consigna_por_frase",
+        "apoyos_visuales",
+        "ejemplo_resuelto"
+      ],
+      "revisar": true
+    },
+    {
+      "id": "ritmo_lento",
+      "nivel_minimo": "basico",
+      "nombre": "Ritmo de aprendizaje más lento o dificultades de aprendizaje no específicas",
+      "nombre_prompt": "Ritmo de aprendizaje más lento o dificultades de aprendizaje no específicas",
+      "grupo": "neae_nee",
+      "descripcion_docente": "Necesita más tiempo, más ejemplos y repasar lo anterior antes de avanzar.",
+      "barreras": [
+        "Tareas que dan por sabidos conocimientos previos que no están consolidados.",
+        "Muchos ítems del mismo tipo con poco tiempo para hacerlos."
+      ],
+      "estrategias_para_ia": [
+        "Añade un andamiaje graduado: de más a menos ayuda a lo largo del documento.",
+        "Incluye un repaso breve de los conocimientos previos necesarios antes de la tarea.",
+        "Reduce el número de ítems manteniendo la misma exigencia competencial."
+      ],
+      "evitar": [],
+      "variables_preseleccionadas": [
+        "consigna_por_frase",
+        "ejemplo_resuelto",
+        "organizador_grafico"
+      ],
+      "revisar": true
+    },
+    {
+      "id": "discapacidad_auditiva",
+      "nivel_minimo": "basico",
+      "nombre": "Discapacidad auditiva",
+      "nombre_prompt": "Discapacidad auditiva",
+      "grupo": "neae_nee",
+      "descripcion_docente": "Necesita que la información importante esté escrita y sea visual, no solo oral.",
+      "barreras": [
+        "Información esencial que solo se da de forma oral o en audios sin transcripción.",
+        "Vocabulario nuevo y consignas largas."
+      ],
+      "estrategias_para_ia": [
+        "Da toda la información esencial por escrito y con apoyo visual.",
+        "No hagas depender ninguna tarea de un audio; si el original lo incluye, pide o añade su transcripción.",
+        "Presenta el vocabulario nuevo antes de la tarea.",
+        "Añade en las notas para el docente un recordatorio sobre la ubicación en el aula y los apoyos (sistema FM y lengua de signos, si procede)."
+      ],
+      "evitar": [
+        "Evita las tareas que solo pueden hacerse escuchando."
+      ],
+      "variables_preseleccionadas": [
+        "consigna_por_frase",
+        "glosario",
+        "apoyos_visuales"
+      ],
+      "revisar": true
+    },
+    {
+      "id": "discapacidad_visual",
+      "nivel_minimo": "basico",
+      "nombre": "Discapacidad visual",
+      "nombre_prompt": "Discapacidad visual",
+      "grupo": "neae_nee",
+      "descripcion_docente": "Necesita letra grande, alto contraste y que las imágenes estén descritas con palabras.",
+      "barreras": [
+        "Letra pequeña, bajo contraste y páginas con muchos elementos.",
+        "Imágenes, gráficos o tablas sin descripción.",
+        "Información que se transmite solo por el color o por la posición en la página."
+      ],
+      "estrategias_para_ia": [
+        "Estructura el documento con títulos y listas reales, compatibles con un lector de pantalla.",
+        "Describe con texto todas las imágenes y los gráficos.",
+        "Usa alto contraste: texto negro sobre fondo blanco, sin fondos de color ni marcas de agua.",
+        "No transmitas ninguna información solo por el color o por la posición en la página.",
+        "Añade en las notas para el docente que las versiones en braille o en relieve se coordinan con el equipo específico de la ONCE."
+      ],
+      "evitar": [
+        "Evita las tablas complejas y los textos sobre imágenes."
+      ],
+      "variables_preseleccionadas": [
+        { "id": "tipografia", "valor": "macrotipo" },
+        "una_pregunta_por_bloque"
+      ],
+      "revisar": true
+    },
+    {
+      "id": "discapacidad_motora",
+      "nivel_minimo": "basico",
+      "nombre": "Discapacidad motora",
+      "nombre_prompt": "Discapacidad motora",
+      "grupo": "neae_nee",
+      "descripcion_docente": "Escribir, recortar o dibujar le supone mucho esfuerzo o tiempo.",
+      "barreras": [
+        "Respuestas que exigen mucha escritura a mano o trazos precisos.",
+        "Espacios de respuesta pequeños.",
+        "Tareas de recortar, trazar o colorear que no son el objetivo de aprendizaje."
+      ],
+      "estrategias_para_ia": [
+        "Deja espacios de respuesta amplios.",
+        "Sustituye las tareas de recortar, trazar o colorear por otras equivalentes, salvo que sean el objetivo de aprendizaje.",
+        "Recuerda en las notas para el docente que puede necesitar más tiempo."
+      ],
+      "evitar": [
+        "Evita las tareas que dependen de la precisión del trazo."
+      ],
+      "variables_preseleccionadas": [
+        "reducir_escritura",
+        { "id": "formatos_respuesta", "valor": ["oral", "seleccion_multiple", "unir", "digital"] }
+      ],
+      "revisar": true
+    },
+    {
+      "id": "altas_capacidades",
+      "nivel_minimo": "basico",
+      "nombre": "Altas capacidades",
+      "nombre_prompt": "Altas capacidades intelectuales",
+      "grupo": "altas_capacidades",
+      "descripcion_docente": "Domina pronto los contenidos y necesita profundizar, no hacer más de lo mismo.",
+      "barreras": [
+        "Tareas repetitivas sobre contenidos que ya domina.",
+        "Actividades cerradas, con una única vía de solución."
+      ],
+      "estrategias_para_ia": [
+        "Enriquece y profundiza: no añadas más cantidad de lo mismo.",
+        "Convierte parte de los ejercicios en tareas abiertas, de transferencia y de pensamiento crítico y creativo.",
+        "Compacta lo que ya se domina: reduce la práctica repetitiva y deja sitio a los retos.",
+        "Incluye retos con varias vías de solución."
+      ],
+      "evitar": [
+        "Evita la ampliación repetitiva: más ejercicios del mismo tipo.",
+        "No propongas que el alumno o alumna haga de ayudante permanente de sus compañeros."
+      ],
+      "variables_preseleccionadas": [
+        "eleccion_tareas",
+        "niveles_reto",
+        "autoevaluacion",
+        "proposito_explicito"
+      ],
+      "revisar": true
+    },
+    {
+      "id": "incorporacion_tardia",
+      "nivel_minimo": "basico",
+      "nombre": "Incorporación tardía con desconocimiento de la lengua vehicular",
+      "nombre_prompt": "Alumnado de incorporación tardía que desconoce la lengua vehicular",
+      "grupo": "desventaja",
+      "descripcion_docente": "Acaba de llegar y todavía no entiende la lengua en la que está escrito el material.",
+      "barreras": [
+        "Consignas y textos en una lengua que todavía no comprende.",
+        "Tareas que evalúan a la vez el contenido y la competencia lingüística.",
+        "Respuestas que exigen redactar en la lengua vehicular."
+      ],
+      "estrategias_para_ia": [
+        "Añade un modelo de consigna con su ejemplo para cada tipo de ejercicio.",
+        "Separa la evaluación del contenido de la evaluación de la competencia lingüística.",
+        "Si te indico la lengua materna, traduce a esa lengua solo las consignas, debajo de la consigna original, y avísame de que debo revisar la traducción."
+      ],
+      "evitar": [
+        "Evita las expresiones coloquiales y las referencias culturales locales sin explicar."
+      ],
+      "variables_preseleccionadas": [
+        "lenguaje_claro",
+        "glosario",
+        "apoyos_visuales",
+        "plantillas_frase",
+        { "id": "formatos_respuesta", "valor": ["unir", "completar_banco", "dibujo"] }
+      ],
+      "revisar": true
+    },
+    {
+      "id": "desventaja_socioeducativa",
+      "nivel_minimo": "basico",
+      "nombre": "Situación de desventaja socioeducativa",
+      "nombre_prompt": "Situación de desventaja socioeducativa",
+      "grupo": "desventaja",
+      "descripcion_docente": "En casa no dispone de recursos, dispositivos o ayuda para hacer las tareas.",
+      "barreras": [
+        "Tareas que necesitan dispositivos, conexión, materiales de pago o ayuda de la familia.",
+        "Productos finales que suponen un gasto."
+      ],
+      "estrategias_para_ia": [
+        "Asegura que las tareas se pueden hacer sin recursos tecnológicos ni económicos y sin ayuda de la familia.",
+        "Usa solo materiales disponibles en el centro.",
+        "Propón productos finales sin coste."
+      ],
+      "evitar": [
+        "Evita las tareas que dependen de internet, de una impresora o de materiales que haya que comprar."
+      ],
+      "variables_preseleccionadas": [],
+      "revisar": true
+    },
+    {
+      "id": "ansiedad",
+      "nivel_minimo": "basico",
+      "nombre": "Ansiedad ante la evaluación o dificultades de regulación emocional",
+      "nombre_prompt": "Ansiedad ante la evaluación o dificultades de regulación emocional",
+      "grupo": "bienestar",
+      "descripcion_docente": "Se bloquea ante los exámenes o cuando no sabe qué se espera exactamente.",
+      "barreras": [
+        "Formatos imprevisibles y preguntas difíciles al principio.",
+        "No saber cuánto vale cada pregunta ni cuánto queda.",
+        "Un tono que transmite presión o amenaza."
+      ],
+      "estrategias_para_ia": [
+        "Mantén un formato predecible de principio a fin.",
+        "Usa un tono tranquilo y cercano en las instrucciones.",
+        "Da al documento un enfoque formativo: lo importante es mostrar lo aprendido."
+      ],
+      "evitar": [
+        "Evita las advertencias amenazantes y las referencias a suspender o a quedarse sin tiempo."
+      ],
+      "variables_preseleccionadas": [
+        "ejemplo_resuelto",
+        "ordenar_dificultad",
+        "puntuacion_visible",
+        "evitar_dobles_negaciones"
+      ],
+      "revisar": true
+    },
+    {
+      "id": "conducta",
+      "nivel_minimo": "basico",
+      "nombre": "Dificultades de conducta",
+      "nombre_prompt": "Dificultades de conducta",
+      "grupo": "bienestar",
+      "descripcion_docente": "Abandona pronto las tareas largas y responde mejor cuando ve avances rápidos y puede elegir.",
+      "barreras": [
+        "Tareas largas sin logros intermedios visibles.",
+        "Expectativas poco claras sobre qué hay que hacer y cómo."
+      ],
+      "estrategias_para_ia": [
+        "Plantea tareas breves con un logro rápido y visible.",
+        "Escribe en la propia tarea, de forma explícita y en positivo, qué se espera.",
+        "Añade en las notas para el docente pautas de refuerzo positivo."
+      ],
+      "evitar": [
+        "Evita formular las expectativas en negativo."
+      ],
+      "variables_preseleccionadas": [
+        "eleccion_tareas",
+        "checklist_autorregulacion",
+        "proposito_explicito"
+      ],
+      "revisar": true
+    },
+    {
+      "id": "personalizado",
+      "nivel_minimo": "experto",
+      "nombre": "Perfil personalizado",
+      "nombre_prompt": "Otras barreras observadas por el docente",
+      "grupo": "otros",
+      "personalizado": true,
+      "descripcion_docente": "Describe con tus palabras las barreras que observas. No escribas nombres ni datos personales.",
+      "barreras": [],
+      "estrategias_para_ia": [
+        "Analiza qué barreras plantea el documento para estas necesidades y aplica las estrategias de DUA que mejor las reduzcan."
+      ],
+      "evitar": [],
+      "variables_preseleccionadas": [],
+      "revisar": true
+    }
+  ]
+}

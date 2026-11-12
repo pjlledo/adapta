@@ -1,0 +1,72 @@
+[
+  {
+    "id": "infantil",
+    "nivel_minimo": "basico",
+    "activo": true,
+    "nombre": "Educación Infantil",
+    "nombre_prompt": "Educación Infantil",
+    "ciclos": [
+      {
+        "id": "inf_c2",
+        "nombre": "2.º ciclo",
+        "cursos": [
+          { "id": "inf_3", "nombre": "3 años", "nombre_prompt": "3 años (2.º ciclo de Educación Infantil)" },
+          { "id": "inf_4", "nombre": "4 años", "nombre_prompt": "4 años (2.º ciclo de Educación Infantil)" },
+          { "id": "inf_5", "nombre": "5 años", "nombre_prompt": "5 años (2.º ciclo de Educación Infantil)" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "primaria",
+    "nivel_minimo": "basico",
+    "activo": true,
+    "nombre": "Educación Primaria",
+    "nombre_prompt": "Educación Primaria",
+    "ciclos": [
+      {
+        "id": "pri_c1",
+        "nombre": "1.er ciclo",
+        "cursos": [
+          { "id": "pri_1", "nombre": "1.º de Primaria", "nombre_prompt": "1.º de Educación Primaria" },
+          { "id": "pri_2", "nombre": "2.º de Primaria", "nombre_prompt": "2.º de Educación Primaria" }
+        ]
+      },
+      {
+        "id": "pri_c2",
+        "nombre": "2.º ciclo",
+        "cursos": [
+          { "id": "pri_3", "nombre": "3.º de Primaria", "nombre_prompt": "3.º de Educación Primaria" },
+          { "id": "pri_4", "nombre": "4.º de Primaria", "nombre_prompt": "4.º de Educación Primaria" }
+        ]
+      },
+      {
+        "id": "pri_c3",
+        "nombre": "3.er ciclo",
+        "cursos": [
+          { "id": "pri_5", "nombre": "5.º de Primaria", "nombre_prompt": "5.º de Educación Primaria" },
+          { "id": "pri_6", "nombre": "6.º de Primaria", "nombre_prompt": "6.º de Educación Primaria" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "eso",
+    "nivel_minimo": "basico",
+    "activo": false,
+    "nombre": "Educación Secundaria Obligatoria",
+    "nombre_prompt": "Educación Secundaria Obligatoria",
+    "ciclos": [
+      {
+        "id": "eso_c",
+        "nombre": "ESO",
+        "cursos": [
+          { "id": "eso_1", "nombre": "1.º de ESO", "nombre_prompt": "1.º de Educación Secundaria Obligatoria" },
+          { "id": "eso_2", "nombre": "2.º de ESO", "nombre_prompt": "2.º de Educación Secundaria Obligatoria" },
+          { "id": "eso_3", "nombre": "3.º de ESO", "nombre_prompt": "3.º de Educación Secundaria Obligatoria" },
+          { "id": "eso_4", "nombre": "4.º de ESO", "nombre_prompt": "4.º de Educación Secundaria Obligatoria" }
+        ]
+      }
+    ]
+  }
+]

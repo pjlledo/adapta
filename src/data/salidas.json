@@ -1,0 +1,120 @@
+{
+  "entregables": [
+    {
+      "id": "documento_adaptado",
+      "nivel_minimo": "basico",
+      "orden": 1,
+      "etiqueta": "Documento adaptado",
+      "ayuda": "El documento nuevo y completo para el alumnado. Siempre se incluye.",
+      "obligatorio": true,
+      "valor_defecto": true,
+      "fragmento_prompt": "El documento adaptado para el alumnado, completo y listo para usar.",
+      "revisar": true
+    },
+    {
+      "id": "multinivel",
+      "nivel_minimo": "experto",
+      "orden": 2,
+      "etiqueta": "Versión multinivel (3 niveles)",
+      "ayuda": "Tres versiones del mismo documento con distinto grado de apoyo y los mismos criterios.",
+      "obligatorio": false,
+      "valor_defecto": false,
+      "fragmento_prompt": "Entrega el documento adaptado en tres versiones con distinto grado de apoyo (más apoyo, apoyo medio y ampliación), con los mismos criterios de evaluación y un aspecto similar, identificadas con una marca discreta.",
+      "revisar": true
+    },
+    {
+      "id": "resumen_cambios",
+      "nivel_minimo": "basico",
+      "orden": 3,
+      "etiqueta": "Resumen breve de cambios",
+      "ayuda": "Una lista corta de lo que la IA ha cambiado, para que puedas revisarlo.",
+      "obligatorio": false,
+      "valor_defecto": true,
+      "fragmento_prompt": "Un resumen breve de los cambios que has hecho respecto al original, en una lista de no más de diez puntos.",
+      "revisar": true
+    },
+    {
+      "id": "tabla_cambios",
+      "nivel_minimo": "avanzado",
+      "orden": 4,
+      "etiqueta": "Tabla de cambios con justificación DUA",
+      "ayuda": "Cada cambio, con el ejercicio al que afecta y el principio DUA que lo justifica. Sustituye al resumen breve.",
+      "obligatorio": false,
+      "valor_defecto": false,
+      "sustituye_a": [
+        "resumen_cambios"
+      ],
+      "fragmento_prompt": "Una tabla de cambios con tres columnas: ejercicio o parte del original, cambio realizado y principio del DUA o barrera que lo justifica.",
+      "revisar": true
+    },
+    {
+      "id": "guia_docente",
+      "nivel_minimo": "avanzado",
+      "orden": 5,
+      "etiqueta": "Guía docente",
+      "ayuda": "Orientaciones breves para aplicar el documento adaptado en el aula.",
+      "obligatorio": false,
+      "valor_defecto": false,
+      "fragmento_prompt": "Una guía breve para el docente: cómo presentar el documento, qué apoyos ofrecer durante la tarea y a qué prestar atención.",
+      "revisar": true
+    },
+    {
+      "id": "solucionario",
+      "nivel_minimo": "avanzado",
+      "orden": 6,
+      "etiqueta": "Solucionario",
+      "ayuda": "Las respuestas del documento adaptado.",
+      "obligatorio": false,
+      "valor_defecto": false,
+      "fragmento_prompt": "El solucionario del documento adaptado.",
+      "revisar": true
+    },
+    {
+      "id": "rubrica",
+      "nivel_minimo": "avanzado",
+      "orden": 7,
+      "etiqueta": "Rúbrica",
+      "ayuda": "Una rúbrica sencilla para valorar el documento adaptado con los mismos criterios.",
+      "obligatorio": false,
+      "valor_defecto": false,
+      "fragmento_prompt": "Una rúbrica sencilla para valorar el trabajo con los criterios de evaluación que se mantienen.",
+      "revisar": true
+    }
+  ],
+  "formatos": [
+    {
+      "id": "docx",
+      "nivel_minimo": "avanzado",
+      "por_defecto": true,
+      "etiqueta": "Archivo Word (.docx) descargable",
+      "fragmento_prompt": "Entrega el documento adaptado como archivo de Word (.docx) descargable y editable.",
+      "revisar": true
+    },
+    {
+      "id": "pdf",
+      "nivel_minimo": "avanzado",
+      "por_defecto": false,
+      "etiqueta": "Archivo PDF descargable",
+      "fragmento_prompt": "Entrega el documento adaptado como archivo PDF descargable, listo para imprimir.",
+      "revisar": true
+    },
+    {
+      "id": "en_respuesta",
+      "nivel_minimo": "avanzado",
+      "por_defecto": false,
+      "etiqueta": "Documento con formato dentro de la respuesta",
+      "fragmento_prompt": "Entrega el documento adaptado dentro de la respuesta, con formato, listo para copiar en un procesador de textos.",
+      "omite_alternativa": true,
+      "revisar": true
+    }
+  ],
+  "alternativa_sin_archivos": "Si no puedes generar archivos descargables, entrega el documento completo dentro de la respuesta, con títulos, numeración y marcas de maquetación, listo para copiar en un procesador de textos.",
+  "maquetacion_fija": [
+    "Cabecera con líneas en blanco para el nombre y la fecha, sin rellenar.",
+    "Numeración clara de los ejercicios."
+  ],
+  "referencia_documento": {
+    "adjunto": "Te adjunto un documento original sin adaptar",
+    "pegado": "Al final de este mensaje te pego el texto de un documento original sin adaptar"
+  }
+}

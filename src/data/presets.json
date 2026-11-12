@@ -1,0 +1,72 @@
+[
+  {
+    "id": "examen_dislexia",
+    "nivel_minimo": "basico",
+    "nombre": "Examen para alumnado con dislexia, 2.º ciclo",
+    "descripcion": "Prueba escrita adaptada para un alumno o alumna con dificultades de lectura y escritura.",
+    "config": {
+      "tipo_material": "prueba_escrita",
+      "adaptacion": "alumno",
+      "curso": "pri_3",
+      "perfiles": ["dislexia"]
+    },
+    "campos_a_revisar": ["curso"],
+    "revisar": true
+  },
+  {
+    "id": "ficha_dua_grupo",
+    "nivel_minimo": "basico",
+    "nombre": "Ficha accesible para todo el grupo (DUA)",
+    "descripcion": "Una ficha rediseñada para que la pueda usar toda la clase.",
+    "config": {
+      "tipo_material": "ficha",
+      "adaptacion": "grupo",
+      "curso": null,
+      "perfiles": []
+    },
+    "campos_a_revisar": ["curso"],
+    "revisar": true
+  },
+  {
+    "id": "actividad_incorporacion_tardia",
+    "nivel_minimo": "basico",
+    "nombre": "Actividad para alumnado de incorporación tardía sin castellano",
+    "descripcion": "Una actividad con lengua simplificada, apoyos visuales y respuestas con poco texto.",
+    "config": {
+      "tipo_material": "actividad",
+      "adaptacion": "alumno",
+      "curso": null,
+      "perfiles": ["incorporacion_tardia"]
+    },
+    "campos_a_revisar": ["curso"],
+    "revisar": true
+  },
+  {
+    "id": "ampliacion_altas_capacidades",
+    "nivel_minimo": "basico",
+    "nombre": "Ampliación para altas capacidades",
+    "descripcion": "Una actividad enriquecida, con retos y elección, sin más cantidad de lo mismo.",
+    "config": {
+      "tipo_material": "actividad",
+      "adaptacion": "alumno",
+      "curso": null,
+      "perfiles": ["altas_capacidades"]
+    },
+    "campos_a_revisar": ["curso"],
+    "revisar": true
+  },
+  {
+    "id": "consignas_tea",
+    "nivel_minimo": "basico",
+    "nombre": "Consignas de aula para alumnado TEA",
+    "descripcion": "Instrucciones de clase literales, paso a paso y con apoyo visual.",
+    "config": {
+      "tipo_material": "consignas_aula",
+      "adaptacion": "alumno",
+      "curso": null,
+      "perfiles": ["tea"]
+    },
+    "campos_a_revisar": ["curso"],
+    "revisar": true
+  }
+]
