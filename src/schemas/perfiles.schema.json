@@ -1,0 +1,161 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Perfiles de necesidad",
+  "type": "object",
+  "required": [
+    "ayuda",
+    "grupos",
+    "perfiles"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "ayuda": {
+      "type": "string",
+      "minLength": 1
+    },
+    "grupos": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "nivel_minimo",
+          "nombre"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "nivel_minimo": {
+            "enum": [
+              "basico",
+              "avanzado",
+              "experto"
+            ]
+          },
+          "nombre": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "perfiles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "nivel_minimo",
+          "nombre",
+          "nombre_prompt",
+          "grupo",
+          "descripcion_docente",
+          "barreras",
+          "estrategias_para_ia",
+          "evitar",
+          "variables_preseleccionadas"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "nivel_minimo": {
+            "enum": [
+              "basico",
+              "avanzado",
+              "experto"
+            ]
+          },
+          "revisar": {
+            "type": "boolean"
+          },
+          "nombre": {
+            "type": "string",
+            "minLength": 1
+          },
+          "nombre_prompt": {
+            "type": "string",
+            "minLength": 1
+          },
+          "grupo": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "personalizado": {
+            "type": "boolean"
+          },
+          "descripcion_docente": {
+            "type": "string",
+            "minLength": 1
+          },
+          "barreras": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "estrategias_para_ia": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "evitar": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "variables_preseleccionadas": {
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[a-z0-9_]+$"
+                },
+                {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "valor"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[a-z0-9_]+$"
+                    },
+                    "valor": {
+                      "type": [
+                        "string",
+                        "number",
+                        "boolean",
+                        "array"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "nota_docente": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

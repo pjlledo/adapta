@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Etapas, ciclos y cursos",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "nivel_minimo",
+      "activo",
+      "nombre",
+      "nombre_prompt",
+      "ciclos"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9_]+$"
+      },
+      "nivel_minimo": {
+        "enum": [
+          "basico",
+          "avanzado",
+          "experto"
+        ]
+      },
+      "revisar": {
+        "type": "boolean"
+      },
+      "activo": {
+        "type": "boolean"
+      },
+      "nombre": {
+        "type": "string",
+        "minLength": 1
+      },
+      "nombre_prompt": {
+        "type": "string",
+        "minLength": 1
+      },
+      "ciclos": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "object",
+          "required": [
+            "id",
+            "nombre",
+            "cursos"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "type": "string",
+              "pattern": "^[a-z0-9_]+$"
+            },
+            "nombre": {
+              "type": "string",
+              "minLength": 1
+            },
+            "cursos": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "required": [
+                  "id",
+                  "nombre",
+                  "nombre_prompt"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9_]+$"
+                  },
+                  "nombre": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "nombre_prompt": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

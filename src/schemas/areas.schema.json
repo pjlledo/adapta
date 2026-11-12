@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Áreas del currículo",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "nivel_minimo",
+      "etapa",
+      "ciclos",
+      "nombre"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9_]+$"
+      },
+      "nivel_minimo": {
+        "enum": [
+          "basico",
+          "avanzado",
+          "experto"
+        ]
+      },
+      "revisar": {
+        "type": "boolean"
+      },
+      "etapa": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "ciclos": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "^[a-z0-9_]+$"
+        }
+      },
+      "nombre": {
+        "type": "string",
+        "minLength": 1
+      },
+      "texto_libre": {
+        "type": "boolean"
+      }
+    }
+  }
+}

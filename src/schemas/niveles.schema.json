@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Niveles de funcionalidad",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "nivel_minimo",
+      "orden",
+      "nombre",
+      "descripcion",
+      "ayuda",
+      "max_perfiles",
+      "medidas_editables",
+      "avisos_visibles",
+      "detalle_normativo_desplegado",
+      "edicion_manual",
+      "guardar_configuraciones",
+      "compartir_enlace"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "enum": [
+          "basico",
+          "avanzado",
+          "experto"
+        ]
+      },
+      "nivel_minimo": {
+        "enum": [
+          "basico",
+          "avanzado",
+          "experto"
+        ]
+      },
+      "revisar": {
+        "type": "boolean"
+      },
+      "orden": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "nombre": {
+        "type": "string",
+        "minLength": 1
+      },
+      "descripcion": {
+        "type": "string",
+        "minLength": 1
+      },
+      "ayuda": {
+        "type": "string",
+        "minLength": 1
+      },
+      "max_perfiles": {
+        "type": [
+          "integer",
+          "null"
+        ]
+      },
+      "medidas_editables": {
+        "type": "boolean"
+      },
+      "avisos_visibles": {
+        "type": "array",
+        "items": {
+          "enum": [
+            "critico",
+            "aviso",
+            "info"
+          ]
+        }
+      },
+      "detalle_normativo_desplegado": {
+        "type": "boolean"
+      },
+      "edicion_manual": {
+        "type": "boolean"
+      },
+      "guardar_configuraciones": {
+        "type": "boolean"
+      },
+      "compartir_enlace": {
+        "type": "boolean"
+      }
+    }
+  }
+}

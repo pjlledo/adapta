@@ -1,0 +1,235 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Campos del formulario",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "nivel_minimo",
+      "paso",
+      "etiqueta",
+      "ayuda",
+      "tipo_control",
+      "valor_defecto",
+      "marcador",
+      "fragmento_prompt"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "id": {
+        "type": "string",
+        "pattern": "^[a-z0-9_]+$"
+      },
+      "nivel_minimo": {
+        "enum": [
+          "basico",
+          "avanzado",
+          "experto"
+        ]
+      },
+      "revisar": {
+        "type": "boolean"
+      },
+      "paso": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 6
+      },
+      "etiqueta": {
+        "type": "string",
+        "minLength": 1
+      },
+      "ayuda": {
+        "type": "string",
+        "minLength": 1
+      },
+      "tipo_control": {
+        "enum": [
+          "checkbox",
+          "select",
+          "text",
+          "textarea",
+          "curso",
+          "area"
+        ]
+      },
+      "opciones": {
+        "type": "array",
+        "minItems": 2,
+        "items": {
+          "type": "object",
+          "required": [
+            "valor",
+            "etiqueta"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "valor": {
+              "type": "string",
+              "pattern": "^[a-z0-9_]+$"
+            },
+            "etiqueta": {
+              "type": "string",
+              "minLength": 1
+            },
+            "texto_prompt": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      },
+      "valor_defecto": {
+        "type": [
+          "boolean",
+          "string",
+          "null"
+        ]
+      },
+      "texto_libre": {
+        "type": "boolean"
+      },
+      "longitud_maxima": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "siempre_en_prompt": {
+        "type": "boolean"
+      },
+      "visible_si": {
+        "$ref": "#/$defs/condicion"
+      },
+      "marcador": {
+        "type": "string",
+        "pattern": "^[a-z0-9_]+$"
+      },
+      "fragmento_prompt": {
+        "type": "string",
+        "minLength": 1
+      },
+      "fragmento_defecto": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  },
+  "$defs": {
+    "condicion": {
+      "anyOf": [
+        {
+          "type": "object",
+          "required": [
+            "todas"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "todas": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/condicion"
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "alguna"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "alguna": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/condicion"
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "no"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "no": {
+              "$ref": "#/$defs/condicion"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "campo"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "campo": {
+              "enum": [
+                "etapa",
+                "ciclo",
+                "curso",
+                "tipo_material",
+                "es_evaluacion",
+                "adaptacion",
+                "nivel",
+                "perfiles",
+                "n_perfiles",
+                "variables_activas",
+                "n_medidas",
+                "nivel_referencia",
+                "tipo_archivo",
+                "mantener_criterios",
+                "datos_personales",
+                "salidas"
+              ]
+            },
+            "igual": {
+              "type": [
+                "string",
+                "boolean",
+                "number"
+              ]
+            },
+            "distinto": {
+              "type": [
+                "string",
+                "boolean",
+                "number"
+              ]
+            },
+            "en": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "incluye": {
+              "type": "string"
+            },
+            "incluye_alguno": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "vacio": {
+              "type": "boolean"
+            },
+            "mayor_que": {
+              "type": "number"
+            },
+            "minimo": {
+              "type": "number"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

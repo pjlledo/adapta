@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Privacidad y textos de uso",
+  "type": "object",
+  "required": [
+    "lista_comprobacion",
+    "detector",
+    "mensaje_detector",
+    "antes_de_usar",
+    "instrucciones_uso"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "lista_comprobacion": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "nivel_minimo",
+          "texto"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "nivel_minimo": {
+            "enum": [
+              "basico",
+              "avanzado",
+              "experto"
+            ]
+          },
+          "revisar": {
+            "type": "boolean"
+          },
+          "texto": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "detector": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "nivel_minimo",
+          "nombre",
+          "patron"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "nivel_minimo": {
+            "enum": [
+              "basico",
+              "avanzado",
+              "experto"
+            ]
+          },
+          "revisar": {
+            "type": "boolean"
+          },
+          "nombre": {
+            "type": "string",
+            "minLength": 1
+          },
+          "patron": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "mensaje_detector": {
+      "type": "string",
+      "minLength": 1
+    },
+    "antes_de_usar": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "nivel_minimo",
+          "texto"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "nivel_minimo": {
+            "enum": [
+              "basico",
+              "avanzado",
+              "experto"
+            ]
+          },
+          "revisar": {
+            "type": "boolean"
+          },
+          "texto": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "instrucciones_uso": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "nivel_minimo",
+          "texto"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "nivel_minimo": {
+            "enum": [
+              "basico",
+              "avanzado",
+              "experto"
+            ]
+          },
+          "revisar": {
+            "type": "boolean"
+          },
+          "texto": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}
