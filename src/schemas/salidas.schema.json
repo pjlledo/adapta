@@ -7,7 +7,8 @@
     "formatos",
     "alternativa_sin_archivos",
     "maquetacion_fija",
-    "referencia_documento"
+    "referencia_documento",
+    "textos_prompt"
   ],
   "additionalProperties": false,
   "properties": {
@@ -143,6 +144,39 @@
           "minLength": 1
         },
         "pegado": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "textos_prompt": {
+      "type": "object",
+      "required": [
+        "etapa_sin_curso",
+        "barreras",
+        "barreras_personalizado",
+        "estrategias",
+        "maquetacion"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "etapa_sin_curso": {
+          "type": "string",
+          "minLength": 1
+        },
+        "barreras": {
+          "type": "string",
+          "minLength": 1
+        },
+        "barreras_personalizado": {
+          "type": "string",
+          "minLength": 1
+        },
+        "estrategias": {
+          "type": "string",
+          "minLength": 1
+        },
+        "maquetacion": {
           "type": "string",
           "minLength": 1
         }

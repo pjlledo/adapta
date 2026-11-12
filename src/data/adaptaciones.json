@@ -15,7 +15,8 @@
       "proposito_explicito"
     ],
     "referencia_normativa": "Decreto 104/2018, art. 14; Orden 20/2019.",
-    "revisar": false
+    "revisar": true,
+    "intro_perfiles": "En el grupo hay alumnado con las necesidades siguientes. Diseña un único documento que anticipe sus barreras:"
   },
   {
     "id": "alumno",
@@ -28,7 +29,8 @@
     "descripcion_prompt": "adecuación personalizada para un alumno o alumna (medida de nivel III). Ajusta la accesibilidad, la presentación y la forma de responder, sin modificar los criterios de evaluación ni los saberes básicos.",
     "variables_preseleccionadas": [],
     "referencia_normativa": "Decreto 104/2018, art. 14; Orden 20/2019.",
-    "revisar": false
+    "revisar": true,
+    "intro_perfiles": "El alumno o alumna para quien es el documento presenta las necesidades siguientes:"
   },
   {
     "id": "acis",
@@ -40,9 +42,13 @@
     "titulo_perfiles": "Perfiles de necesidad",
     "descripcion_prompt": "material para un alumno o alumna con adaptación curricular individual significativa (ACIS, medida de nivel IV) que ya consta en su plan de actuación personalizado (PAP). Su nivel de referencia curricular es {{nivel_referencia}}: ajusta contenidos y exigencia a ese nivel, manteniendo el tema y un diseño adecuado a su edad real.",
     "variables_preseleccionadas": [],
-    "requiere": ["nivel_referencia"],
+    "requiere": [
+      "nivel_referencia"
+    ],
     "aviso": "Adapta no sugiere ni decide una ACIS. Esta opción solo prepara material para una ACIS que ya existe.",
     "referencia_normativa": "Orden 20/2019, art. 20.",
-    "revisar": false
+    "revisar": true,
+    "intro_perfiles": "El alumno o alumna para quien es el documento presenta las necesidades siguientes:",
+    "al_ocultarse": "alumno"
   }
 ]

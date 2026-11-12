@@ -268,7 +268,7 @@ export function comprobacionesCruzadas(d, plantilla) {
     }
   }
   for (const v of d.variables) { comprobarCondicion('variables', `[${v.id}]`, v.visible_si); comprobarCondicion('variables', `[${v.id}]`, v.bloqueada_salvo); }
-  for (const c of d.campos) comprobarCondicion('campos', `[${c.id}]`, c.visible_si);
+  for (const c of d.campos) { comprobarCondicion('campos', `[${c.id}]`, c.visible_si); comprobarCondicion('campos', `[${c.id}]`, c.defecto_si); }
 
   // 7. Campos: opciones, valores por defecto y marcadores.
   const enPlantilla = new Set(marcadoresDe(plantilla));

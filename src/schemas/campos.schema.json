@@ -112,6 +112,9 @@
       "fragmento_defecto": {
         "type": "string",
         "minLength": 1
+      },
+      "defecto_si": {
+        "$ref": "#/$defs/condicion"
       }
     }
   },

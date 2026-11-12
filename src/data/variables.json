@@ -112,9 +112,21 @@
     "ayuda": "Tamaño de letra del documento adaptado. Si varios perfiles piden tamaños distintos, se aplica el mayor.",
     "tipo_control": "select",
     "opciones": [
-      { "valor": "estandar", "etiqueta": "Estándar (12 pt)", "texto_prompt": "de 12 pt" },
-      { "valor": "ampliada", "etiqueta": "Ampliada (14 pt)", "texto_prompt": "ampliado, de 14 pt" },
-      { "valor": "macrotipo", "etiqueta": "Macrotipo (18 pt o más)", "texto_prompt": "en macrotipo, de 18 pt o más" }
+      {
+        "valor": "estandar",
+        "etiqueta": "Estándar (12 pt)",
+        "texto_prompt": "de 12 pt"
+      },
+      {
+        "valor": "ampliada",
+        "etiqueta": "Ampliada (14 pt)",
+        "texto_prompt": "ampliado, de 14 pt"
+      },
+      {
+        "valor": "macrotipo",
+        "etiqueta": "Macrotipo (18 pt o más)",
+        "texto_prompt": "en macrotipo, de 18 pt o más"
+      }
     ],
     "valor_defecto": "estandar",
     "fragmento_prompt": "Usa un cuerpo de letra {{valor}}.",
@@ -134,7 +146,6 @@
     "incompatible_con": [],
     "revisar": false
   },
-
   {
     "id": "formatos_respuesta",
     "nivel_minimo": "avanzado",
@@ -144,13 +155,41 @@
     "ayuda": "Otras formas de responder que evalúan lo mismo.",
     "tipo_control": "multiselect",
     "opciones": [
-      { "valor": "oral", "etiqueta": "Respuesta oral", "texto_prompt": "respuesta oral" },
-      { "valor": "seleccion_multiple", "etiqueta": "Selección múltiple", "texto_prompt": "selección múltiple" },
-      { "valor": "verdadero_falso", "etiqueta": "Verdadero o falso", "texto_prompt": "verdadero o falso" },
-      { "valor": "unir", "etiqueta": "Unir con flechas", "texto_prompt": "unir con flechas" },
-      { "valor": "completar_banco", "etiqueta": "Completar con banco de palabras", "texto_prompt": "completar con un banco de palabras" },
-      { "valor": "dibujo", "etiqueta": "Dibujo o esquema", "texto_prompt": "dibujo o esquema" },
-      { "valor": "digital", "etiqueta": "Respuesta digital", "texto_prompt": "respuesta en un dispositivo digital" }
+      {
+        "valor": "oral",
+        "etiqueta": "Respuesta oral",
+        "texto_prompt": "respuesta oral"
+      },
+      {
+        "valor": "seleccion_multiple",
+        "etiqueta": "Selección múltiple",
+        "texto_prompt": "selección múltiple"
+      },
+      {
+        "valor": "verdadero_falso",
+        "etiqueta": "Verdadero o falso",
+        "texto_prompt": "verdadero o falso"
+      },
+      {
+        "valor": "unir",
+        "etiqueta": "Unir con flechas",
+        "texto_prompt": "unir con flechas"
+      },
+      {
+        "valor": "completar_banco",
+        "etiqueta": "Completar con banco de palabras",
+        "texto_prompt": "completar con un banco de palabras"
+      },
+      {
+        "valor": "dibujo",
+        "etiqueta": "Dibujo o esquema",
+        "texto_prompt": "dibujo o esquema"
+      },
+      {
+        "valor": "digital",
+        "etiqueta": "Respuesta digital",
+        "texto_prompt": "respuesta en un dispositivo digital"
+      }
     ],
     "valor_defecto": [],
     "fragmento_prompt": "Ofrece formatos de respuesta alternativos que evalúen lo mismo, eligiendo en cada ejercicio el más adecuado entre estos: {{valor}}.",
@@ -192,11 +231,31 @@
     "ayuda": "El documento indicará al alumnado qué puede usar mientras trabaja.",
     "tipo_control": "multiselect",
     "opciones": [
-      { "valor": "tablas", "etiqueta": "Tablas de multiplicar", "texto_prompt": "tablas de multiplicar" },
-      { "valor": "calculadora", "etiqueta": "Calculadora", "texto_prompt": "calculadora" },
-      { "valor": "diccionario", "etiqueta": "Diccionario", "texto_prompt": "diccionario" },
-      { "valor": "recta_numerica", "etiqueta": "Recta numérica", "texto_prompt": "recta numérica" },
-      { "valor": "esquema", "etiqueta": "Esquema o resumen propio", "texto_prompt": "un esquema o resumen propio" }
+      {
+        "valor": "tablas",
+        "etiqueta": "Tablas de multiplicar",
+        "texto_prompt": "tablas de multiplicar"
+      },
+      {
+        "valor": "calculadora",
+        "etiqueta": "Calculadora",
+        "texto_prompt": "calculadora"
+      },
+      {
+        "valor": "diccionario",
+        "etiqueta": "Diccionario",
+        "texto_prompt": "diccionario"
+      },
+      {
+        "valor": "recta_numerica",
+        "etiqueta": "Recta numérica",
+        "texto_prompt": "recta numérica"
+      },
+      {
+        "valor": "esquema",
+        "etiqueta": "Esquema o resumen propio",
+        "texto_prompt": "un esquema o resumen propio"
+      }
     ],
     "valor_defecto": [],
     "fragmento_prompt": "Indica en el documento que se pueden usar estos materiales de apoyo: {{valor}}.",
@@ -231,7 +290,6 @@
     "incompatible_con": [],
     "revisar": false
   },
-
   {
     "id": "conectar_intereses",
     "nivel_minimo": "experto",
@@ -295,7 +353,9 @@
     "tipo_control": "checkbox",
     "valor_defecto": false,
     "fragmento_prompt": "Propón que parte de la tarea se haga en equipo cooperativo, con roles definidos y una responsabilidad individual clara.",
-    "incompatible_con": ["version_oral"],
+    "incompatible_con": [
+      "version_oral"
+    ],
     "revisar": false
   },
   {
@@ -311,7 +371,6 @@
     "incompatible_con": [],
     "revisar": false
   },
-
   {
     "id": "mantener_criterios",
     "nivel_minimo": "basico",
@@ -322,7 +381,10 @@
     "ayuda": "Siempre activa en el diseño para el grupo y en la adecuación personalizada. Solo puede desactivarse en material para alumnado con ACIS.",
     "tipo_control": "checkbox",
     "valor_defecto": true,
-    "bloqueada_salvo": { "campo": "adaptacion", "igual": "acis" },
+    "bloqueada_salvo": {
+      "campo": "adaptacion",
+      "igual": "acis"
+    },
     "fragmento_prompt": "No modifiques los criterios de evaluación, los saberes básicos ni el nivel de exigencia competencial del documento original: cambia la forma de presentar y de responder, no lo que se aprende o se evalúa.",
     "fragmento_desactivada": "Ajusta los criterios de evaluación y los saberes básicos al nivel de referencia curricular indicado, conforme a la ACIS del alumno o alumna.",
     "incompatible_con": [],
@@ -333,7 +395,10 @@
     "nivel_minimo": "avanzado",
     "grupo": "evaluacion",
     "principio_dua": null,
-    "visible_si": { "campo": "es_evaluacion", "igual": true },
+    "visible_si": {
+      "campo": "es_evaluacion",
+      "igual": true
+    },
     "etiqueta": "Ordenar de menor a mayor dificultad",
     "ayuda": "Empezar por lo más asequible reduce el bloqueo inicial.",
     "tipo_control": "checkbox",
@@ -347,7 +412,10 @@
     "nivel_minimo": "avanzado",
     "grupo": "evaluacion",
     "principio_dua": null,
-    "visible_si": { "campo": "es_evaluacion", "igual": true },
+    "visible_si": {
+      "campo": "es_evaluacion",
+      "igual": true
+    },
     "etiqueta": "Una pregunta por bloque con espacio para responder",
     "ayuda": "Cada pregunta separada de las demás y con su propio espacio.",
     "tipo_control": "checkbox",
@@ -361,7 +429,10 @@
     "nivel_minimo": "avanzado",
     "grupo": "evaluacion",
     "principio_dua": null,
-    "visible_si": { "campo": "es_evaluacion", "igual": true },
+    "visible_si": {
+      "campo": "es_evaluacion",
+      "igual": true
+    },
     "etiqueta": "Puntuación visible",
     "ayuda": "El valor de cada pregunta junto a su enunciado.",
     "tipo_control": "checkbox",
@@ -375,7 +446,10 @@
     "nivel_minimo": "avanzado",
     "grupo": "evaluacion",
     "principio_dua": null,
-    "visible_si": { "campo": "es_evaluacion", "igual": true },
+    "visible_si": {
+      "campo": "es_evaluacion",
+      "igual": true
+    },
     "etiqueta": "Evitar dobles negaciones y preguntas trampa",
     "ayuda": "Preguntas directas, sin formulaciones que confundan.",
     "tipo_control": "checkbox",
@@ -389,18 +463,36 @@
     "nivel_minimo": "experto",
     "grupo": "evaluacion",
     "principio_dua": null,
-    "visible_si": { "campo": "es_evaluacion", "igual": true },
+    "visible_si": {
+      "campo": "es_evaluacion",
+      "igual": true
+    },
     "etiqueta": "Tiempo adicional",
     "ayuda": "Se añade como nota para el docente, no en el documento del alumnado.",
     "tipo_control": "select",
     "opciones": [
-      { "valor": "ninguno", "etiqueta": "Sin tiempo adicional" },
-      { "valor": "25", "etiqueta": "25 % más", "texto_prompt": "un 25 % más de tiempo" },
-      { "valor": "50", "etiqueta": "50 % más", "texto_prompt": "un 50 % más de tiempo" },
-      { "valor": "segun_pap", "etiqueta": "Según el PAP", "texto_prompt": "el tiempo adicional que conste en su PAP" }
+      {
+        "valor": "ninguno",
+        "etiqueta": "Sin tiempo adicional"
+      },
+      {
+        "valor": "25",
+        "etiqueta": "25 % más",
+        "texto_prompt": "un 25 % más"
+      },
+      {
+        "valor": "50",
+        "etiqueta": "50 % más",
+        "texto_prompt": "un 50 % más"
+      },
+      {
+        "valor": "segun_pap",
+        "etiqueta": "Según el PAP",
+        "texto_prompt": "el que conste en su PAP"
+      }
     ],
     "valor_defecto": "ninguno",
-    "fragmento_prompt": "Incluye en las notas para el docente que el alumno o alumna dispone de {{valor}}.",
+    "fragmento_prompt": "Incluye en las notas para el docente el tiempo adicional del que dispone el alumno o alumna: {{valor}}.",
     "incompatible_con": [],
     "revisar": false
   },
@@ -409,13 +501,18 @@
     "nivel_minimo": "experto",
     "grupo": "evaluacion",
     "principio_dua": null,
-    "visible_si": { "campo": "es_evaluacion", "igual": true },
+    "visible_si": {
+      "campo": "es_evaluacion",
+      "igual": true
+    },
     "etiqueta": "Versión oral equivalente",
     "ayuda": "Un guion para hacer la misma prueba de forma oral.",
     "tipo_control": "checkbox",
     "valor_defecto": false,
     "fragmento_prompt": "Prepara además una versión oral equivalente: un guion de preguntas para el docente con espacio para anotar las respuestas.",
-    "incompatible_con": ["cooperativo_roles"],
+    "incompatible_con": [
+      "cooperativo_roles"
+    ],
     "revisar": false
   },
   {
@@ -423,7 +520,10 @@
     "nivel_minimo": "avanzado",
     "grupo": "evaluacion",
     "principio_dua": null,
-    "visible_si": { "campo": "es_evaluacion", "igual": true },
+    "visible_si": {
+      "campo": "es_evaluacion",
+      "igual": true
+    },
     "etiqueta": "Proponer instrumentos alternativos o complementarios",
     "ayuda": "La IA sugerirá otras formas de evaluar lo mismo (observación, rúbrica, entrevista oral).",
     "tipo_control": "checkbox",
@@ -437,7 +537,10 @@
     "nivel_minimo": "experto",
     "grupo": "evaluacion",
     "principio_dua": null,
-    "visible_si": { "campo": "es_evaluacion", "igual": true },
+    "visible_si": {
+      "campo": "es_evaluacion",
+      "igual": true
+    },
     "etiqueta": "Número máximo de ítems",
     "ayuda": "Límite de preguntas de la prueba adaptada. Déjalo vacío para no limitar.",
     "tipo_control": "number",
@@ -448,7 +551,6 @@
     "incompatible_con": [],
     "revisar": false
   },
-
   {
     "id": "maq_margenes",
     "nivel_minimo": "experto",
@@ -458,8 +560,16 @@
     "ayuda": "Márgenes de la página del documento adaptado.",
     "tipo_control": "select",
     "opciones": [
-      { "valor": "amplios", "etiqueta": "Amplios (2,5 cm)", "texto_prompt": "amplios (unos 2,5 cm)" },
-      { "valor": "normales", "etiqueta": "Normales (2 cm)", "texto_prompt": "normales (unos 2 cm)" }
+      {
+        "valor": "amplios",
+        "etiqueta": "Amplios (2,5 cm)",
+        "texto_prompt": "amplios (unos 2,5 cm)"
+      },
+      {
+        "valor": "normales",
+        "etiqueta": "Normales (2 cm)",
+        "texto_prompt": "normales (unos 2 cm)"
+      }
     ],
     "valor_defecto": "amplios",
     "siempre_en_prompt": true,
@@ -476,9 +586,21 @@
     "ayuda": "Familia tipográfica. Las fuentes «para dislexia» son opcionales: su eficacia tiene escasa evidencia.",
     "tipo_control": "select",
     "opciones": [
-      { "valor": "sin_serifa", "etiqueta": "Sin serifa (Arial, Verdana o similar)", "texto_prompt": "sin serifa (Arial, Verdana o similar)" },
-      { "valor": "escolar", "etiqueta": "Escolar de imprenta", "texto_prompt": "escolar de imprenta, sin enlazar" },
-      { "valor": "opendyslexic", "etiqueta": "OpenDyslexic", "texto_prompt": "OpenDyslexic o, si no está disponible, una sin serifa" }
+      {
+        "valor": "sin_serifa",
+        "etiqueta": "Sin serifa (Arial, Verdana o similar)",
+        "texto_prompt": "sin serifa (Arial, Verdana o similar)"
+      },
+      {
+        "valor": "escolar",
+        "etiqueta": "Escolar de imprenta",
+        "texto_prompt": "escolar de imprenta, sin enlazar"
+      },
+      {
+        "valor": "opendyslexic",
+        "etiqueta": "OpenDyslexic",
+        "texto_prompt": "OpenDyslexic o, si no está disponible, una sin serifa"
+      }
     ],
     "valor_defecto": "sin_serifa",
     "siempre_en_prompt": true,
@@ -495,9 +617,21 @@
     "ayuda": "Separación entre líneas.",
     "tipo_control": "select",
     "opciones": [
-      { "valor": "1_5", "etiqueta": "1,5", "texto_prompt": "1,5" },
-      { "valor": "doble", "etiqueta": "Doble", "texto_prompt": "doble" },
-      { "valor": "sencillo", "etiqueta": "Sencillo", "texto_prompt": "sencillo" }
+      {
+        "valor": "1_5",
+        "etiqueta": "1,5",
+        "texto_prompt": "1,5"
+      },
+      {
+        "valor": "doble",
+        "etiqueta": "Doble",
+        "texto_prompt": "doble"
+      },
+      {
+        "valor": "sencillo",
+        "etiqueta": "Sencillo",
+        "texto_prompt": "sencillo"
+      }
     ],
     "valor_defecto": "1_5",
     "siempre_en_prompt": true,
@@ -514,9 +648,21 @@
     "ayuda": "Cómo se deja el hueco para responder.",
     "tipo_control": "select",
     "opciones": [
-      { "valor": "suficiente", "etiqueta": "Espacio suficiente", "texto_prompt": "espacio suficiente para responder" },
-      { "valor": "amplio", "etiqueta": "Espacio amplio", "texto_prompt": "espacio amplio para responder, mayor que en el original" },
-      { "valor": "pauta", "etiqueta": "Líneas de pauta", "texto_prompt": "líneas de pauta para escribir la respuesta" }
+      {
+        "valor": "suficiente",
+        "etiqueta": "Espacio suficiente",
+        "texto_prompt": "espacio suficiente para responder"
+      },
+      {
+        "valor": "amplio",
+        "etiqueta": "Espacio amplio",
+        "texto_prompt": "espacio amplio para responder, mayor que en el original"
+      },
+      {
+        "valor": "pauta",
+        "etiqueta": "Líneas de pauta",
+        "texto_prompt": "líneas de pauta para escribir la respuesta"
+      }
     ],
     "valor_defecto": "suficiente",
     "siempre_en_prompt": true,

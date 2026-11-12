@@ -7,12 +7,14 @@
     "ayuda": "El que consta en la ACIS del PAP del alumno o alumna.",
     "tipo_control": "curso",
     "valor_defecto": null,
-    "visible_si": { "campo": "adaptacion", "igual": "acis" },
+    "visible_si": {
+      "campo": "adaptacion",
+      "igual": "acis"
+    },
     "marcador": "nivel_referencia",
     "fragmento_prompt": "{{valor}}",
     "revisar": false
   },
-
   {
     "id": "area",
     "nivel_minimo": "avanzado",
@@ -33,10 +35,26 @@
     "ayuda": "La lengua en la que está escrito el original y en la que se redactará el adaptado.",
     "tipo_control": "select",
     "opciones": [
-      { "valor": "original", "etiqueta": "La misma del original", "texto_prompt": "la misma lengua que el documento original" },
-      { "valor": "castellano", "etiqueta": "Castellano", "texto_prompt": "castellano" },
-      { "valor": "valenciano", "etiqueta": "Valenciano", "texto_prompt": "valenciano" },
-      { "valor": "ingles", "etiqueta": "Inglés", "texto_prompt": "inglés" }
+      {
+        "valor": "original",
+        "etiqueta": "La misma del original",
+        "texto_prompt": "la misma lengua que el documento original"
+      },
+      {
+        "valor": "castellano",
+        "etiqueta": "Castellano",
+        "texto_prompt": "castellano"
+      },
+      {
+        "valor": "valenciano",
+        "etiqueta": "Valenciano",
+        "texto_prompt": "valenciano"
+      },
+      {
+        "valor": "ingles",
+        "etiqueta": "Inglés",
+        "texto_prompt": "inglés"
+      }
     ],
     "valor_defecto": "original",
     "siempre_en_prompt": true,
@@ -56,7 +74,11 @@
     "marcador": "criterios_a_mantener",
     "fragmento_prompt": "Estos son los criterios de evaluación o saberes básicos que el documento adaptado debe seguir trabajando o evaluando:\n{{valor}}",
     "fragmento_defecto": "Identifica qué criterios de evaluación y saberes básicos trabaja o evalúa cada ejercicio del documento original y mantenlos en el documento adaptado.",
-    "revisar": false
+    "revisar": false,
+    "defecto_si": {
+      "campo": "mantener_criterios",
+      "igual": true
+    }
   },
   {
     "id": "contexto_grupo",
@@ -82,7 +104,10 @@
     "texto_libre": true,
     "longitud_maxima": 60,
     "valor_defecto": "",
-    "visible_si": { "campo": "perfiles", "incluye": "incorporacion_tardia" },
+    "visible_si": {
+      "campo": "perfiles",
+      "incluye": "incorporacion_tardia"
+    },
     "marcador": "contexto",
     "fragmento_prompt": "Lengua materna del alumnado de incorporación tardía: {{valor}}.",
     "revisar": false
@@ -95,9 +120,20 @@
     "ayuda": "Útil si el documento está en una lengua y quieres el resumen de cambios y las notas en otra.",
     "tipo_control": "select",
     "opciones": [
-      { "valor": "igual", "etiqueta": "El mismo que el documento" },
-      { "valor": "castellano", "etiqueta": "Castellano", "texto_prompt": "castellano" },
-      { "valor": "valenciano", "etiqueta": "Valenciano", "texto_prompt": "valenciano" }
+      {
+        "valor": "igual",
+        "etiqueta": "El mismo que el documento"
+      },
+      {
+        "valor": "castellano",
+        "etiqueta": "Castellano",
+        "texto_prompt": "castellano"
+      },
+      {
+        "valor": "valenciano",
+        "etiqueta": "Valenciano",
+        "texto_prompt": "valenciano"
+      }
     ],
     "valor_defecto": "igual",
     "marcador": "idioma_respuesta",
@@ -118,7 +154,6 @@
     "fragmento_prompt": "Tiempo previsto: {{valor}}.",
     "revisar": false
   },
-
   {
     "id": "tipo_archivo",
     "nivel_minimo": "basico",
@@ -127,8 +162,15 @@
     "ayuda": "Si es una foto o un escaneo, la IA tendrá que transcribirlo antes de adaptarlo.",
     "tipo_control": "select",
     "opciones": [
-      { "valor": "digital", "etiqueta": "PDF o Word digital" },
-      { "valor": "foto", "etiqueta": "Foto o escaneo", "texto_prompt": "Es una foto o un escaneo: transcribe su contenido con cuidado y marca con [ILEGIBLE] lo que no puedas leer con seguridad, sin inventarlo." }
+      {
+        "valor": "digital",
+        "etiqueta": "PDF o Word digital"
+      },
+      {
+        "valor": "foto",
+        "etiqueta": "Foto o escaneo",
+        "texto_prompt": "Es una foto o un escaneo: transcribe su contenido con cuidado y marca con [ILEGIBLE] lo que no puedas leer con seguridad, sin inventarlo."
+      }
     ],
     "valor_defecto": "digital",
     "marcador": "instruccion_foto_escaneo",

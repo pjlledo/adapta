@@ -15,7 +15,8 @@
       "titulo_perfiles",
       "descripcion_prompt",
       "variables_preseleccionadas",
-      "referencia_normativa"
+      "referencia_normativa",
+      "intro_perfiles"
     ],
     "additionalProperties": false,
     "properties": {
@@ -105,6 +106,14 @@
       },
       "referencia_normativa": {
         "type": "string"
+      },
+      "intro_perfiles": {
+        "type": "string",
+        "minLength": 1
+      },
+      "al_ocultarse": {
+        "type": "string",
+        "pattern": "^[a-z0-9_]+$"
       }
     }
   }

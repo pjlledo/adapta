@@ -19,7 +19,7 @@
       "ayuda": "Tres versiones del mismo documento con distinto grado de apoyo y los mismos criterios.",
       "obligatorio": false,
       "valor_defecto": false,
-      "fragmento_prompt": "Entrega el documento adaptado en tres versiones con distinto grado de apoyo (más apoyo, apoyo medio y ampliación), con los mismos criterios de evaluación y un aspecto similar, identificadas con una marca discreta.",
+      "fragmento_prompt": "Otras dos versiones del documento adaptado, una con más apoyo y otra de ampliación, con los mismos criterios de evaluación y un aspecto similar, identificadas con una marca discreta.",
       "revisar": false
     },
     {
@@ -116,5 +116,12 @@
   "referencia_documento": {
     "adjunto": "Te adjunto un documento original sin adaptar",
     "pegado": "Al final de este mensaje te pego el texto de un documento original sin adaptar"
+  },
+  "textos_prompt": {
+    "etapa_sin_curso": "Educación Infantil y Primaria",
+    "barreras": "Barreras previsibles:",
+    "barreras_personalizado": "Barreras observadas:",
+    "estrategias": "Estrategias:",
+    "maquetacion": "Maquetación del documento:"
   }
 }
