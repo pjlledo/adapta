@@ -10,7 +10,7 @@
     "visible_si": { "campo": "adaptacion", "igual": "acis" },
     "marcador": "nivel_referencia",
     "fragmento_prompt": "{{valor}}",
-    "revisar": true
+    "revisar": false
   },
 
   {
@@ -23,7 +23,7 @@
     "valor_defecto": null,
     "marcador": "area",
     "fragmento_prompt": "{{valor}}",
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "lengua_documento",
@@ -42,7 +42,7 @@
     "siempre_en_prompt": true,
     "marcador": "idioma_documento",
     "fragmento_prompt": "{{valor}}",
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "criterios",
@@ -56,7 +56,7 @@
     "marcador": "criterios_a_mantener",
     "fragmento_prompt": "Estos son los criterios de evaluación o saberes básicos que el documento adaptado debe seguir trabajando o evaluando:\n{{valor}}",
     "fragmento_defecto": "Identifica qué criterios de evaluación y saberes básicos trabaja o evalúa cada ejercicio del documento original y mantenlos en el documento adaptado.",
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "contexto_grupo",
@@ -70,7 +70,7 @@
     "valor_defecto": "",
     "marcador": "contexto",
     "fragmento_prompt": "Contexto del grupo: {{valor}}",
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "lengua_materna",
@@ -85,7 +85,7 @@
     "visible_si": { "campo": "perfiles", "incluye": "incorporacion_tardia" },
     "marcador": "contexto",
     "fragmento_prompt": "Lengua materna del alumnado de incorporación tardía: {{valor}}.",
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "idioma_respuesta",
@@ -102,7 +102,7 @@
     "valor_defecto": "igual",
     "marcador": "idioma_respuesta",
     "fragmento_prompt": "Escribe en {{valor}} todo lo que no sea el documento para el alumnado (resumen de cambios, notas y guía para el docente).",
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "duracion",
@@ -116,7 +116,7 @@
     "valor_defecto": "",
     "marcador": "contexto",
     "fragmento_prompt": "Tiempo previsto: {{valor}}.",
-    "revisar": true
+    "revisar": false
   },
 
   {
@@ -133,7 +133,7 @@
     "valor_defecto": "digital",
     "marcador": "instruccion_foto_escaneo",
     "fragmento_prompt": "{{valor}}",
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "num_paginas",
@@ -147,7 +147,7 @@
     "valor_defecto": "",
     "marcador": "info_documento",
     "fragmento_prompt": "Extensión aproximada del original: {{valor}}.",
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "partes_no_modificables",
@@ -161,7 +161,7 @@
     "valor_defecto": "",
     "marcador": "partes_no_modificables",
     "fragmento_prompt": "No modifiques estas partes del documento: {{valor}}.",
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "ejercicios_omitibles",
@@ -175,7 +175,7 @@
     "valor_defecto": "",
     "marcador": "info_documento",
     "fragmento_prompt": "Puedes omitir o fusionar estos ejercicios: {{valor}}.",
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "imagenes_importantes",
@@ -187,7 +187,7 @@
     "valor_defecto": false,
     "marcador": "info_documento",
     "fragmento_prompt": "El documento contiene imágenes necesarias para responder algunos ejercicios: presta especial atención a conservar su función.",
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "texto_pegado",
@@ -200,6 +200,6 @@
     "valor_defecto": "",
     "marcador": "texto_pegado",
     "fragmento_prompt": "{{valor}}",
-    "revisar": true
+    "revisar": false
   }
 ]

@@ -9,7 +9,7 @@
       "obligatorio": true,
       "valor_defecto": true,
       "fragmento_prompt": "El documento adaptado para el alumnado, completo y listo para usar.",
-      "revisar": true
+      "revisar": false
     },
     {
       "id": "multinivel",
@@ -20,7 +20,7 @@
       "obligatorio": false,
       "valor_defecto": false,
       "fragmento_prompt": "Entrega el documento adaptado en tres versiones con distinto grado de apoyo (más apoyo, apoyo medio y ampliación), con los mismos criterios de evaluación y un aspecto similar, identificadas con una marca discreta.",
-      "revisar": true
+      "revisar": false
     },
     {
       "id": "resumen_cambios",
@@ -31,7 +31,7 @@
       "obligatorio": false,
       "valor_defecto": true,
       "fragmento_prompt": "Un resumen breve de los cambios que has hecho respecto al original, en una lista de no más de diez puntos.",
-      "revisar": true
+      "revisar": false
     },
     {
       "id": "tabla_cambios",
@@ -45,7 +45,7 @@
         "resumen_cambios"
       ],
       "fragmento_prompt": "Una tabla de cambios con tres columnas: ejercicio o parte del original, cambio realizado y principio del DUA o barrera que lo justifica.",
-      "revisar": true
+      "revisar": false
     },
     {
       "id": "guia_docente",
@@ -56,7 +56,7 @@
       "obligatorio": false,
       "valor_defecto": false,
       "fragmento_prompt": "Una guía breve para el docente: cómo presentar el documento, qué apoyos ofrecer durante la tarea y a qué prestar atención.",
-      "revisar": true
+      "revisar": false
     },
     {
       "id": "solucionario",
@@ -67,7 +67,7 @@
       "obligatorio": false,
       "valor_defecto": false,
       "fragmento_prompt": "El solucionario del documento adaptado.",
-      "revisar": true
+      "revisar": false
     },
     {
       "id": "rubrica",
@@ -78,7 +78,7 @@
       "obligatorio": false,
       "valor_defecto": false,
       "fragmento_prompt": "Una rúbrica sencilla para valorar el trabajo con los criterios de evaluación que se mantienen.",
-      "revisar": true
+      "revisar": false
     }
   ],
   "formatos": [
@@ -88,7 +88,7 @@
       "por_defecto": true,
       "etiqueta": "Archivo Word (.docx) descargable",
       "fragmento_prompt": "Entrega el documento adaptado como archivo de Word (.docx) descargable y editable.",
-      "revisar": true
+      "revisar": false
     },
     {
       "id": "pdf",
@@ -96,7 +96,7 @@
       "por_defecto": false,
       "etiqueta": "Archivo PDF descargable",
       "fragmento_prompt": "Entrega el documento adaptado como archivo PDF descargable, listo para imprimir.",
-      "revisar": true
+      "revisar": false
     },
     {
       "id": "en_respuesta",
@@ -105,7 +105,7 @@
       "etiqueta": "Documento con formato dentro de la respuesta",
       "fragmento_prompt": "Entrega el documento adaptado dentro de la respuesta, con formato, listo para copiar en un procesador de textos.",
       "omite_alternativa": true,
-      "revisar": true
+      "revisar": false
     }
   ],
   "alternativa_sin_archivos": "Si no puedes generar archivos descargables, entrega el documento completo dentro de la respuesta, con títulos, numeración y marcas de maquetación, listo para copiar en un procesador de textos.",

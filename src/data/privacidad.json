@@ -13,10 +13,10 @@
   ],
   "mensaje_detector": "Parece que hay {{tipo}}. No incluyas datos personales.",
   "antes_de_usar": [
-    { "id": "revisar_resultado", "nivel_minimo": "basico", "texto": "Revisa siempre el documento que genera la IA antes de usarlo en clase.", "revisar": true },
-    { "id": "comprobar_criterios", "nivel_minimo": "basico", "texto": "Comprueba que se mantienen los criterios de evaluación y que no falta ningún ejercicio.", "revisar": true },
-    { "id": "ia_autorizada", "nivel_minimo": "basico", "texto": "Usa las herramientas de IA autorizadas por tu centro.", "revisar": true },
-    { "id": "sin_datos", "nivel_minimo": "basico", "texto": "No adjuntes documentos con datos personales.", "revisar": true }
+    { "id": "revisar_resultado", "nivel_minimo": "basico", "texto": "Revisa siempre el documento que genera la IA antes de usarlo en clase.", "revisar": false },
+    { "id": "comprobar_criterios", "nivel_minimo": "basico", "texto": "Comprueba que se mantienen los criterios de evaluación y que no falta ningún ejercicio.", "revisar": false },
+    { "id": "ia_autorizada", "nivel_minimo": "basico", "texto": "Usa las herramientas de IA autorizadas por tu centro.", "revisar": false },
+    { "id": "sin_datos", "nivel_minimo": "basico", "texto": "No adjuntes documentos con datos personales.", "revisar": false }
   ],
   "instrucciones_uso": [
     { "id": "abrir", "nivel_minimo": "basico", "texto": "Abre tu herramienta de IA" },

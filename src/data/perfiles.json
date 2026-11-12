@@ -39,7 +39,7 @@
         "evitar_dobles_negaciones"
       ],
       "nota_docente": "Las fuentes «para dislexia» son opcionales: su eficacia tiene escasa evidencia.",
-      "revisar": true
+      "revisar": false
     },
     {
       "id": "discalculia",
@@ -68,7 +68,7 @@
         "ejemplo_resuelto",
         { "id": "materiales_apoyo", "valor": ["tablas", "recta_numerica"] }
       ],
-      "revisar": true
+      "revisar": false
     },
     {
       "id": "tdah",
@@ -99,7 +99,7 @@
         "checklist_autorregulacion",
         "una_pregunta_por_bloque"
       ],
-      "revisar": true
+      "revisar": false
     },
     {
       "id": "tea",
@@ -128,7 +128,7 @@
         "ejemplo_resuelto",
         "evitar_dobles_negaciones"
       ],
-      "revisar": true
+      "revisar": false
     },
     {
       "id": "tdl",
@@ -155,7 +155,7 @@
         "apoyos_visuales",
         "plantillas_frase"
       ],
-      "revisar": true
+      "revisar": false
     },
     {
       "id": "discapacidad_intelectual",
@@ -184,7 +184,7 @@
         "apoyos_visuales",
         "ejemplo_resuelto"
       ],
-      "revisar": true
+      "revisar": false
     },
     {
       "id": "ritmo_lento",
@@ -208,7 +208,7 @@
         "ejemplo_resuelto",
         "organizador_grafico"
       ],
-      "revisar": true
+      "revisar": false
     },
     {
       "id": "discapacidad_auditiva",
@@ -235,7 +235,7 @@
         "glosario",
         "apoyos_visuales"
       ],
-      "revisar": true
+      "revisar": false
     },
     {
       "id": "discapacidad_visual",
@@ -263,7 +263,7 @@
         { "id": "tipografia", "valor": "macrotipo" },
         "una_pregunta_por_bloque"
       ],
-      "revisar": true
+      "revisar": false
     },
     {
       "id": "discapacidad_motora",
@@ -289,7 +289,7 @@
         "reducir_escritura",
         { "id": "formatos_respuesta", "valor": ["oral", "seleccion_multiple", "unir", "digital"] }
       ],
-      "revisar": true
+      "revisar": false
     },
     {
       "id": "altas_capacidades",
@@ -318,7 +318,7 @@
         "autoevaluacion",
         "proposito_explicito"
       ],
-      "revisar": true
+      "revisar": false
     },
     {
       "id": "incorporacion_tardia",
@@ -347,7 +347,7 @@
         "plantillas_frase",
         { "id": "formatos_respuesta", "valor": ["unir", "completar_banco", "dibujo"] }
       ],
-      "revisar": true
+      "revisar": false
     },
     {
       "id": "desventaja_socioeducativa",
@@ -369,7 +369,7 @@
         "Evita las tareas que dependen de internet, de una impresora o de materiales que haya que comprar."
       ],
       "variables_preseleccionadas": [],
-      "revisar": true
+      "revisar": false
     },
     {
       "id": "ansiedad",
@@ -397,7 +397,7 @@
         "puntuacion_visible",
         "evitar_dobles_negaciones"
       ],
-      "revisar": true
+      "revisar": false
     },
     {
       "id": "conducta",
@@ -423,7 +423,7 @@
         "checklist_autorregulacion",
         "proposito_explicito"
       ],
-      "revisar": true
+      "revisar": false
     },
     {
       "id": "personalizado",
@@ -439,7 +439,7 @@
       ],
       "evitar": [],
       "variables_preseleccionadas": [],
-      "revisar": true
+      "revisar": false
     }
   ]
 }

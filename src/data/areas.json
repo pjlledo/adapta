@@ -1,17 +1,17 @@
 [
-  { "id": "inf_crecimiento", "nivel_minimo": "avanzado", "etapa": "infantil", "ciclos": [], "nombre": "Crecimiento en armonía", "revisar": true },
-  { "id": "inf_entorno", "nivel_minimo": "avanzado", "etapa": "infantil", "ciclos": [], "nombre": "Descubrimiento y exploración del entorno", "revisar": true },
-  { "id": "inf_comunicacion", "nivel_minimo": "avanzado", "etapa": "infantil", "ciclos": [], "nombre": "Comunicación y representación de la realidad", "revisar": true },
+  { "id": "inf_crecimiento", "nivel_minimo": "avanzado", "etapa": "infantil", "ciclos": [], "nombre": "Crecimiento en armonía", "revisar": false },
+  { "id": "inf_entorno", "nivel_minimo": "avanzado", "etapa": "infantil", "ciclos": [], "nombre": "Descubrimiento y exploración del entorno", "revisar": false },
+  { "id": "inf_comunicacion", "nivel_minimo": "avanzado", "etapa": "infantil", "ciclos": [], "nombre": "Comunicación y representación de la realidad", "revisar": false },
 
-  { "id": "pri_medio", "nivel_minimo": "avanzado", "etapa": "primaria", "ciclos": [], "nombre": "Conocimiento del Medio Natural, Social y Cultural", "revisar": true },
-  { "id": "pri_artistica", "nivel_minimo": "avanzado", "etapa": "primaria", "ciclos": [], "nombre": "Educación Artística", "revisar": true },
-  { "id": "pri_ef", "nivel_minimo": "avanzado", "etapa": "primaria", "ciclos": [], "nombre": "Educación Física", "revisar": true },
-  { "id": "pri_castellano", "nivel_minimo": "avanzado", "etapa": "primaria", "ciclos": [], "nombre": "Lengua Castellana y Literatura", "revisar": true },
-  { "id": "pri_valenciano", "nivel_minimo": "avanzado", "etapa": "primaria", "ciclos": [], "nombre": "Valenciano: Lengua y Literatura", "revisar": true },
-  { "id": "pri_extranjera", "nivel_minimo": "avanzado", "etapa": "primaria", "ciclos": [], "nombre": "Lengua Extranjera", "revisar": true },
-  { "id": "pri_matematicas", "nivel_minimo": "avanzado", "etapa": "primaria", "ciclos": [], "nombre": "Matemáticas", "revisar": true },
-  { "id": "pri_valores", "nivel_minimo": "avanzado", "etapa": "primaria", "ciclos": ["pri_c3"], "nombre": "Educación en Valores Cívicos y Éticos", "revisar": true },
-  { "id": "pri_religion", "nivel_minimo": "avanzado", "etapa": "primaria", "ciclos": [], "nombre": "Religión", "revisar": true },
+  { "id": "pri_medio", "nivel_minimo": "avanzado", "etapa": "primaria", "ciclos": [], "nombre": "Conocimiento del Medio Natural, Social y Cultural", "revisar": false },
+  { "id": "pri_artistica", "nivel_minimo": "avanzado", "etapa": "primaria", "ciclos": [], "nombre": "Educación Artística", "revisar": false },
+  { "id": "pri_ef", "nivel_minimo": "avanzado", "etapa": "primaria", "ciclos": [], "nombre": "Educación Física", "revisar": false },
+  { "id": "pri_castellano", "nivel_minimo": "avanzado", "etapa": "primaria", "ciclos": [], "nombre": "Lengua Castellana y Literatura", "revisar": false },
+  { "id": "pri_valenciano", "nivel_minimo": "avanzado", "etapa": "primaria", "ciclos": [], "nombre": "Valenciano: Lengua y Literatura", "revisar": false },
+  { "id": "pri_extranjera", "nivel_minimo": "avanzado", "etapa": "primaria", "ciclos": [], "nombre": "Lengua Extranjera", "revisar": false },
+  { "id": "pri_matematicas", "nivel_minimo": "avanzado", "etapa": "primaria", "ciclos": [], "nombre": "Matemáticas", "revisar": false },
+  { "id": "pri_valores", "nivel_minimo": "avanzado", "etapa": "primaria", "ciclos": ["pri_c3"], "nombre": "Educación en Valores Cívicos y Éticos", "revisar": false },
+  { "id": "pri_religion", "nivel_minimo": "avanzado", "etapa": "primaria", "ciclos": [], "nombre": "Religión", "revisar": false },
 
-  { "id": "otra", "nivel_minimo": "avanzado", "etapa": null, "ciclos": [], "nombre": "Otra", "texto_libre": true, "revisar": true }
+  { "id": "otra", "nivel_minimo": "avanzado", "etapa": null, "ciclos": [], "nombre": "Otra", "texto_libre": true, "revisar": false }
 ]

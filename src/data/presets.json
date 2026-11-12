@@ -11,7 +11,7 @@
       "perfiles": ["dislexia"]
     },
     "campos_a_revisar": ["curso"],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "ficha_dua_grupo",
@@ -25,7 +25,7 @@
       "perfiles": []
     },
     "campos_a_revisar": ["curso"],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "actividad_incorporacion_tardia",
@@ -39,7 +39,7 @@
       "perfiles": ["incorporacion_tardia"]
     },
     "campos_a_revisar": ["curso"],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "ampliacion_altas_capacidades",
@@ -53,7 +53,7 @@
       "perfiles": ["altas_capacidades"]
     },
     "campos_a_revisar": ["curso"],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "consignas_tea",
@@ -67,6 +67,6 @@
       "perfiles": ["tea"]
     },
     "campos_a_revisar": ["curso"],
-    "revisar": true
+    "revisar": false
   }
 ]

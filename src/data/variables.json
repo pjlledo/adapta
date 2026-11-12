@@ -10,7 +10,7 @@
     "valor_defecto": false,
     "fragmento_prompt": "Reescribe los textos en lenguaje claro, siguiendo las pautas de lectura fácil: frases cortas, vocabulario frecuente, una idea por frase y orden lógico.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "simplificar_enunciados",
@@ -23,7 +23,7 @@
     "valor_defecto": false,
     "fragmento_prompt": "Simplifica la redacción de los enunciados sin cambiar lo que se pide ni su nivel de exigencia.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "consigna_por_frase",
@@ -36,7 +36,7 @@
     "valor_defecto": false,
     "fragmento_prompt": "Escribe una sola consigna por frase y numera los pasos cuando una tarea tenga varios.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "palabras_clave_negrita",
@@ -49,7 +49,7 @@
     "valor_defecto": false,
     "fragmento_prompt": "Destaca en negrita las palabras clave de cada enunciado, sobre todo la acción que se pide.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "glosario",
@@ -62,7 +62,7 @@
     "valor_defecto": false,
     "fragmento_prompt": "Añade un glosario breve con el vocabulario clave y una definición sencilla de cada palabra.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "apoyos_visuales",
@@ -75,7 +75,7 @@
     "valor_defecto": false,
     "fragmento_prompt": "Añade apoyos visuales a las consignas y al vocabulario clave. Cuando no puedas insertar la imagen, marca su lugar con [PICTOGRAMA: palabra] y recuérdame en el resumen de cambios que puedo buscar los pictogramas en ARASAAC.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "ejemplo_resuelto",
@@ -88,7 +88,7 @@
     "valor_defecto": false,
     "fragmento_prompt": "Incluye un ejemplo resuelto antes de cada tipo de ejercicio, distinto de los ítems que se van a responder.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "organizador_grafico",
@@ -101,7 +101,7 @@
     "valor_defecto": false,
     "fragmento_prompt": "Añade al inicio un organizador gráfico o esquema que ordene la información principal.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "tipografia",
@@ -119,7 +119,7 @@
     "valor_defecto": "estandar",
     "fragmento_prompt": "Usa un cuerpo de letra {{valor}}.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "guion_lectura_voz_alta",
@@ -132,7 +132,7 @@
     "valor_defecto": false,
     "fragmento_prompt": "Prepara, aparte del documento del alumnado, un guion para que el docente lea en voz alta los enunciados, con pausas marcadas.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
 
   {
@@ -155,7 +155,7 @@
     "valor_defecto": [],
     "fragmento_prompt": "Ofrece formatos de respuesta alternativos que evalúen lo mismo, eligiendo en cada ejercicio el más adecuado entre estos: {{valor}}.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "reducir_escritura",
@@ -168,7 +168,7 @@
     "valor_defecto": false,
     "fragmento_prompt": "Reduce la cantidad de escritura a mano que exige cada ejercicio cuando la escritura no sea lo que se evalúa: evita copiar enunciados y permite marcar, rodear o completar.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "plantillas_frase",
@@ -181,7 +181,7 @@
     "valor_defecto": false,
     "fragmento_prompt": "Ofrece plantillas o inicios de frase en las respuestas que piden redactar.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "materiales_apoyo",
@@ -201,7 +201,7 @@
     "valor_defecto": [],
     "fragmento_prompt": "Indica en el documento que se pueden usar estos materiales de apoyo: {{valor}}.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "checklist_autorregulacion",
@@ -214,7 +214,7 @@
     "valor_defecto": false,
     "fragmento_prompt": "Añade una lista de comprobación con casillas para que el alumnado marque cada paso o ejercicio terminado.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "dividir_bloques",
@@ -229,7 +229,7 @@
     "valor_defecto": null,
     "fragmento_prompt": "Divide el documento en {{valor}} bloques o sesiones equilibrados, cada uno con sentido completo.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
 
   {
@@ -244,7 +244,7 @@
     "valor_defecto": "",
     "fragmento_prompt": "Cuando no altere lo que se evalúa, contextualiza ejemplos y enunciados con estos intereses: {{valor}}.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "eleccion_tareas",
@@ -257,7 +257,7 @@
     "valor_defecto": false,
     "fragmento_prompt": "Ofrece, donde sea posible, la elección entre dos o tres tareas o productos equivalentes que permitan demostrar el mismo aprendizaje.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "niveles_reto",
@@ -270,7 +270,7 @@
     "valor_defecto": false,
     "fragmento_prompt": "Gradúa los ejercicios en niveles de reto señalados con claridad, de modo que todo el alumnado pueda empezar y también avanzar.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "autoevaluacion",
@@ -283,7 +283,7 @@
     "valor_defecto": false,
     "fragmento_prompt": "Cierra el documento con una autoevaluación breve: qué he aprendido, qué me ha costado y qué necesito.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "cooperativo_roles",
@@ -296,7 +296,7 @@
     "valor_defecto": false,
     "fragmento_prompt": "Propón que parte de la tarea se haga en equipo cooperativo, con roles definidos y una responsabilidad individual clara.",
     "incompatible_con": ["version_oral"],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "proposito_explicito",
@@ -309,7 +309,7 @@
     "valor_defecto": false,
     "fragmento_prompt": "Empieza el documento con una frase breve que explique al alumnado para qué sirve lo que va a hacer.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
 
   {
@@ -326,7 +326,7 @@
     "fragmento_prompt": "No modifiques los criterios de evaluación, los saberes básicos ni el nivel de exigencia competencial del documento original: cambia la forma de presentar y de responder, no lo que se aprende o se evalúa.",
     "fragmento_desactivada": "Ajusta los criterios de evaluación y los saberes básicos al nivel de referencia curricular indicado, conforme a la ACIS del alumno o alumna.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "ordenar_dificultad",
@@ -340,7 +340,7 @@
     "valor_defecto": false,
     "fragmento_prompt": "Ordena las preguntas de menor a mayor dificultad e indícame en el resumen de cambios el nuevo orden respecto al original.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "una_pregunta_por_bloque",
@@ -354,7 +354,7 @@
     "valor_defecto": false,
     "fragmento_prompt": "Presenta cada pregunta en un bloque separado, con su propio espacio de respuesta justo debajo.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "puntuacion_visible",
@@ -368,7 +368,7 @@
     "valor_defecto": false,
     "fragmento_prompt": "Indica junto a cada pregunta su puntuación, respetando el reparto del original.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "evitar_dobles_negaciones",
@@ -382,7 +382,7 @@
     "valor_defecto": false,
     "fragmento_prompt": "Reformula las preguntas con dobles negaciones o con trampas de redacción para que pregunten de forma directa.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "tiempo_adicional",
@@ -402,7 +402,7 @@
     "valor_defecto": "ninguno",
     "fragmento_prompt": "Incluye en las notas para el docente que el alumno o alumna dispone de {{valor}}.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "version_oral",
@@ -416,7 +416,7 @@
     "valor_defecto": false,
     "fragmento_prompt": "Prepara además una versión oral equivalente: un guion de preguntas para el docente con espacio para anotar las respuestas.",
     "incompatible_con": ["cooperativo_roles"],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "instrumentos_alternativos",
@@ -430,7 +430,7 @@
     "valor_defecto": false,
     "fragmento_prompt": "Propón, después del documento, uno o dos instrumentos de evaluación alternativos o complementarios para los mismos criterios (registro de observación, rúbrica, lista de control o entrevista oral).",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "max_items",
@@ -446,7 +446,7 @@
     "valor_defecto": null,
     "fragmento_prompt": "Limita la prueba a un máximo de {{valor}} ítems: elimina los repetitivos, mantén al menos uno por cada criterio evaluado e indica en el resumen de cambios cuáles has quitado.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
 
   {
@@ -465,7 +465,7 @@
     "siempre_en_prompt": true,
     "fragmento_prompt": "Página A4 vertical con márgenes {{valor}}.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "maq_fuente",
@@ -484,7 +484,7 @@
     "siempre_en_prompt": true,
     "fragmento_prompt": "Tipografía {{valor}}.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "maq_interlineado",
@@ -503,7 +503,7 @@
     "siempre_en_prompt": true,
     "fragmento_prompt": "Interlineado {{valor}} y texto alineado a la izquierda, sin justificar.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "maq_espacio_respuesta",
@@ -522,7 +522,7 @@
     "siempre_en_prompt": true,
     "fragmento_prompt": "Deja {{valor}} debajo de cada ejercicio.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "extension_maxima",
@@ -537,6 +537,6 @@
     "valor_defecto": null,
     "fragmento_prompt": "Número máximo de páginas de la versión para el alumnado: {{valor}}.",
     "incompatible_con": [],
-    "revisar": true
+    "revisar": false
   }
 ]

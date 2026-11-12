@@ -12,7 +12,7 @@
     "accion": { "tipo": "cambiar_tipo_material", "valor": "instrumento_evaluacion", "etiqueta": "Cambiar a «Instrumento de evaluación alternativo»" },
     "referencia_normativa": "Decreto 100/2022, del Consell, de ordenación y currículo de la Educación Infantil.",
     "detalle_normativo": "La evaluación en Educación Infantil es global, continua y formativa. La observación directa y sistemática es la técnica principal del proceso de evaluación.",
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "primer_ciclo_prueba_escrita",
@@ -28,7 +28,7 @@
     "accion": { "tipo": "activar_variable", "valor": "instrumentos_alternativos", "etiqueta": "Proponer instrumentos alternativos o complementarios" },
     "referencia_normativa": "Decreto 106/2022, del Consell, modificado por el Decreto 96/2026.",
     "detalle_normativo": "Según el Decreto 96/2026, en el primer ciclo se priorizan la observación, los registros, las entrevistas orales y las rúbricas; en el segundo y tercer ciclo las pruebas escritas son puntuales y no pueden ser el único instrumento de evaluación.",
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "acis_sin_nivel_referencia",
@@ -43,7 +43,7 @@
     "accion": { "tipo": "ir_a_campo", "valor": "nivel_referencia", "etiqueta": "Indicar el nivel de referencia" },
     "referencia_normativa": "Orden 20/2019, art. 20.",
     "detalle_normativo": "La adaptación curricular individual significativa (ACIS) es una medida de respuesta de nivel IV. Requiere evaluación sociopsicopedagógica previa y debe constar en el plan de actuación personalizado (PAP).",
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "criterios_desactivados_sin_acis",
@@ -58,7 +58,7 @@
     "accion": { "tipo": "activar_variable", "valor": "mantener_criterios", "etiqueta": "Volver a mantener los criterios" },
     "referencia_normativa": "Decreto 104/2018, art. 14; Orden 20/2019.",
     "detalle_normativo": "Solo las medidas de nivel IV, como la ACIS, modifican los elementos prescriptivos del currículo, y requieren evaluación sociopsicopedagógica.",
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "altas_capacidades_simplificacion",
@@ -72,7 +72,7 @@
     "mensaje": "Has combinado altas capacidades con medidas de simplificación o de reducción. Puede ser una contradicción, o puede tratarse de doble excepcionalidad (altas capacidades junto con otra necesidad). Revisa que es lo que quieres.",
     "referencia_normativa": "",
     "detalle_normativo": "",
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "demasiadas_medidas",
@@ -83,7 +83,7 @@
     "mensaje": "Hay más de 12 medidas activas. Con tantas instrucciones la IA suele aplicar algunas a medias: prioriza las que más reducen las barreras.",
     "referencia_normativa": "",
     "detalle_normativo": "",
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "datos_personales",
@@ -94,7 +94,7 @@
     "mensaje": "Alguno de los textos que has escrito parece contener datos personales (DNI o NIE, NIA, correo, teléfono o fecha de nacimiento). Bórralos antes de copiar el prompt.",
     "referencia_normativa": "Reglamento (UE) 2016/679 (RGPD) y Ley Orgánica 3/2018 (LOPDGDD).",
     "detalle_normativo": "",
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "grupo_muchos_perfiles",
@@ -111,7 +111,7 @@
     "accion": { "tipo": "activar_salida", "valor": "multinivel", "etiqueta": "Pedir versión multinivel" },
     "referencia_normativa": "",
     "detalle_normativo": "",
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "foto_escaneo",
@@ -122,6 +122,6 @@
     "mensaje": "Haz la foto nítida, recta y con buena luz, y comprueba que no aparece ninguna persona ni otros datos.",
     "referencia_normativa": "",
     "detalle_normativo": "",
-    "revisar": true
+    "revisar": false
   }
 ]

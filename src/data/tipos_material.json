@@ -8,7 +8,7 @@
     "es_evaluacion": false,
     "variables_sugeridas": ["consigna_por_frase", "ejemplo_resuelto"],
     "avisos": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "ficha",
@@ -19,7 +19,7 @@
     "es_evaluacion": false,
     "variables_sugeridas": ["consigna_por_frase", "ejemplo_resuelto"],
     "avisos": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "texto_lectura",
@@ -30,7 +30,7 @@
     "es_evaluacion": false,
     "variables_sugeridas": ["glosario", "organizador_grafico"],
     "avisos": ["Si el texto original no puede cambiarse (por ejemplo, una obra literaria), indícalo en «Partes que no deben modificarse»."],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "situacion_aprendizaje",
@@ -41,7 +41,7 @@
     "es_evaluacion": false,
     "variables_sugeridas": ["proposito_explicito", "eleccion_tareas", "autoevaluacion"],
     "avisos": ["Los documentos largos se adaptan mejor por partes: si la IA corta la respuesta, pídele que continúe."],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "prueba_escrita",
@@ -52,7 +52,7 @@
     "es_evaluacion": true,
     "variables_sugeridas": ["puntuacion_visible", "ordenar_dificultad", "evitar_dobles_negaciones"],
     "avisos": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "instrumento_evaluacion",
@@ -63,7 +63,7 @@
     "es_evaluacion": true,
     "variables_sugeridas": [],
     "avisos": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "consignas_aula",
@@ -74,7 +74,7 @@
     "es_evaluacion": false,
     "variables_sugeridas": ["consigna_por_frase", "apoyos_visuales"],
     "avisos": [],
-    "revisar": true
+    "revisar": false
   },
   {
     "id": "tarea_casa",
@@ -85,6 +85,6 @@
     "es_evaluacion": false,
     "variables_sugeridas": ["consigna_por_frase", "ejemplo_resuelto"],
     "avisos": ["Comprueba que la tarea puede hacerse sin recursos tecnológicos ni ayuda familiar."],
-    "revisar": true
+    "revisar": false
   }
 ]
