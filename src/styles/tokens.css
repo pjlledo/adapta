@@ -1,0 +1,94 @@
+/*
+  Tokens de diseño de Adapta.
+  Extraídos de la app de referencia (Mesures, src/styles.css). Los valores son los
+  mismos salvo los marcados con «AJUSTE», que se oscurecen para cumplir WCAG 2.2 AA
+  (contraste ≥ 4,5:1 en texto pequeño sobre su fondo suave).
+*/
+:root {
+  /* Superficies y texto */
+  --bg: #f3f5fa;
+  --surface: #ffffff;
+  --surface-2: #eef1f7;
+  --text: #131a2b;
+  --muted: #5a6377;
+  --border: #d8deea;
+
+  /* Marca */
+  --accent: #2350b5;
+  --accent-hover: #1c4399;
+  --accent-ink: #ffffff;
+  --accent-soft: #e2e9fb;
+  --navy: #1d3a7a;
+  --sel: #e8eefc;
+
+  /* Estados: sugerencia / correcto, aviso, error / crítico */
+  --sug: #17703c;       /* AJUSTE: en Mesures #1e8449 (4,1:1 sobre --sug-soft) */
+  --sug-soft: #e3f3e9;
+  --val: #8a5a00;       /* AJUSTE: en Mesures #9a6700 (4,4:1 sobre --val-soft) */
+  --val-soft: #fff4d6;
+  --err: #c0392b;
+  --err-soft: #fbe8e6;
+
+  /* Colores del logotipo (cuatro cuadros) */
+  --logo-1: #7fa2ff;
+  --logo-2: #6fd49a;
+  --logo-3: #ffcf5c;
+  --logo-4: #ff8a7d;
+
+  /* Tipografía: pila del sistema, como en Mesures */
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --fs-xs: 12.5px;   /* pie, notas */
+  --fs-sm: 14px;     /* etiquetas, botones pequeños, chips grandes */
+  --fs-base: 16px;   /* cuerpo y campos */
+  --fs-h3: 16px;
+  --fs-h2: 19px;
+  --fs-h1: clamp(22px, 4.5vw, 28px);
+  --lh: 1.5;
+
+  /* Forma */
+  --radius: 16px;       /* tarjetas */
+  --radius-btn: 12px;   /* botones */
+  --radius-sm: 10px;    /* campos, botones pequeños, segmentados */
+  --radius-dlg: 20px;   /* diálogos */
+  --radius-pill: 999px; /* chips y perfiles */
+  --shadow: 0 1px 2px rgba(19, 26, 43, .06), 0 6px 20px rgba(19, 26, 43, .07);
+  --shadow-dlg: 0 20px 60px rgba(0, 0, 0, .3);
+
+  /* Espaciado y tamaños táctiles */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 18px;  /* relleno de tarjeta */
+  --sp-6: 24px;
+  --tap: 44px;
+  --tap-sm: 36px;
+  --wrap: 1000px;
+
+  /* Movimiento */
+  --t-fast: .15s;
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1420; --surface: #181f2e; --surface-2: #212a3c; --text: #e8ecf5; --muted: #a2abbe; --border: #2e384d;
+    --accent: #6f95ff; --accent-hover: #89a8ff; --accent-ink: #0b1430; --accent-soft: #1f2d52; --navy: #16264d; --sel: #1c2744;
+    --sug: #6fd49a; --sug-soft: #163324; --val: #ffcf5c; --val-soft: #3a3017; --err: #ff8a7d; --err-soft: #3a1f1d;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 6px 20px rgba(0, 0, 0, .25);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1420; --surface: #181f2e; --surface-2: #212a3c; --text: #e8ecf5; --muted: #a2abbe; --border: #2e384d;
+  --accent: #6f95ff; --accent-hover: #89a8ff; --accent-ink: #0b1430; --accent-soft: #1f2d52; --navy: #16264d; --sel: #1c2744;
+  --sug: #6fd49a; --sug-soft: #163324; --val: #ffcf5c; --val-soft: #3a3017; --err: #ff8a7d; --err-soft: #3a1f1d;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 6px 20px rgba(0, 0, 0, .25);
+  color-scheme: dark;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --t-fast: 0s; }
+}
