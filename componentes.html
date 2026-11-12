@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Adapta · Muestra de componentes</title>
+<meta name="theme-color" content="#1d3a7a">
+<link rel="stylesheet" href="src/styles/tokens.css">
+<link rel="stylesheet" href="src/styles/componentes.css">
+<style>
+  /* Estilos propios de esta página de muestra (no forman parte de la app) */
+  main { padding: 18px 0 40px; }
+  .muestra > h2 { font-size: 14px; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); margin: 28px 0 8px; }
+  .origen { font-size: 12.5px; color: var(--muted); margin: 0 0 10px; }
+  .paleta { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 8px; }
+  .muestra-color { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--surface); font-size: 12px; }
+  .muestra-color i { display: block; height: 44px; border-bottom: 1px solid var(--border); }
+  .muestra-color span { display: block; padding: 4px 8px; font-family: var(--font-mono); }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></symbol>
+  <symbol id="i-stop" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6M12 16.5h.01"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5h.01"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></symbol>
+  <symbol id="i-reset" viewBox="0 0 24 24"><path d="M4 5v5h5"/><path d="M4.6 14a8 8 0 1 0 1.6-7.6L4 10"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m13.5 6.5 4 4"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 15a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="i-clip" viewBox="0 0 24 24"><path d="m20 11-8.5 8.5a5 5 0 0 1-7-7L13 4a3.3 3.3 0 0 1 4.7 4.7l-8.5 8.5a1.7 1.7 0 0 1-2.4-2.4L14.5 7"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M21 3 10 14M21 3l-7 18-4-7-7-4z"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap row">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="brand-txt"><strong>Adapta</strong><span>Prompts para adaptar materiales con DUA</span></div>
+    </div>
+    <div class="acciones">
+      <div class="lang" role="group" aria-label="Idioma">
+        <button type="button" aria-pressed="true">ES</button>
+        <button type="button" aria-pressed="false" disabled title="Valenciano: próximamente">VA</button>
+      </div>
+      <button type="button" class="btn ghost sm" id="bTema" aria-pressed="false"><svg class="i" aria-hidden="true"><use href="#i-moon"/></svg><span class="lbl">Modo oscuro</span></button>
+    </div>
+  </div>
+  <div class="wrap niveles">
+    <div class="niveles-seg" role="group" aria-label="Nivel de funcionalidad" id="niveles">
+      <button type="button" aria-pressed="true" data-desc="Elige curso y perfil; Adapta hace el resto.">
+        <strong><svg class="i marca" aria-hidden="true"><use href="#i-check"/></svg>Básico</strong>
+        <span class="desc">Elige curso y perfil; Adapta hace el resto.</span>
+      </button>
+      <button type="button" aria-pressed="false" data-desc="Decide qué medidas aplicar y qué quieres recibir.">
+        <strong><svg class="i marca" aria-hidden="true"><use href="#i-check"/></svg>Avanzado</strong>
+        <span class="desc">Decide qué medidas aplicar y qué quieres recibir.</span>
+      </button>
+      <button type="button" aria-pressed="false" data-desc="Control total de la adaptación, la maquetación y el prompt.">
+        <strong><svg class="i marca" aria-hidden="true"><use href="#i-check"/></svg>Experto</strong>
+        <span class="desc">Control total de la adaptación, la maquetación y el prompt.</span>
+      </button>
+    </div>
+    <p class="niveles-desc" id="nivelesDesc" aria-live="polite">Elige curso y perfil; Adapta hace el resto.</p>
+  </div>
+  <nav class="wrap pasos" aria-label="Pasos">
+    <button type="button" class="paso hecho"><span class="n">1</span><span class="t">Material</span></button>
+    <button type="button" class="paso hecho"><span class="n">2</span><span class="t">Contexto</span></button>
+    <button type="button" class="paso" aria-current="step"><span class="n">3</span><span class="t">Perfiles</span></button>
+    <button type="button" class="paso"><span class="n">4</span><span class="t">Medidas</span></button>
+    <button type="button" class="paso"><span class="n">5</span><span class="t">Documento</span></button>
+    <button type="button" class="paso"><span class="n">6</span><span class="t">Entrega</span></button>
+  </nav>
+</header>
+
+<main class="wrap muestra">
+  <h1>Muestra de componentes</h1>
+  <p class="lead">Página de validación de la fase 1. La cabecera de arriba (logo, idioma, selector de nivel y pasos) también es parte de la muestra. Los textos son de ejemplo.</p>
+
+  <h2>Paleta</h2>
+  <p class="origen">Valores de Mesures. <code>--sug</code> y <code>--val</code> están oscurecidos en modo claro para cumplir contraste AA.</p>
+  <div class="paleta" id="paleta"></div>
+
+  <h2>Tipografía</h2>
+  <div class="card">
+    <h1>Título de página (h1)</h1>
+    <h2>Título de sección (h2)</h2>
+    <h3>Título de tarjeta (h3)</h3>
+    <p>Texto de cuerpo a 16 px con la tipografía del sistema, igual que en Mesures. <button type="button" class="link">Enlace de acción</button></p>
+    <p class="hint">Texto de ayuda a 13 px en color atenuado.</p>
+  </div>
+
+  <h2>Botones</h2>
+  <p class="origen">Igual que Mesures. «Grande» es el de las descargas de Mesures.</p>
+  <div class="card stack">
+    <div class="fila">
+      <button type="button" class="btn primary"><svg class="i" aria-hidden="true"><use href="#i-copy"/></svg>Copiar prompt</button>
+      <button type="button" class="btn">Secundario</button>
+      <button type="button" class="btn ghost"><svg class="i" aria-hidden="true"><use href="#i-down"/></svg>Descargar .txt</button>
+      <button type="button" class="btn ghost"><svg class="i" aria-hidden="true"><use href="#i-reset"/></svg>Reiniciar</button>
+      <button type="button" class="btn primary" disabled>Deshabilitado</button>
+    </div>
+    <div class="fila">
+      <button type="button" class="btn primary sm">Pequeño</button>
+      <button type="button" class="btn ghost sm"><svg class="i" aria-hidden="true"><use href="#i-edit"/></svg>Editar manualmente</button>
+      <button type="button" class="btn primary lg">Grande</button>
+    </div>
+    <div class="fila">
+      <div class="seg" role="group" aria-label="Tipo de documento">
+        <button type="button" aria-pressed="true">PDF o Word digital</button>
+        <button type="button" aria-pressed="false">Foto o escaneo</button>
+      </div>
+    </div>
+  </div>
+
+  <h2>Chips</h2>
+  <div class="card fila">
+    <span class="chip">Neutro</span>
+    <span class="chip et">2.º ciclo</span>
+    <span class="chip sug"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Sugerida por el perfil TDAH</span>
+    <span class="chip val">Revisar</span>
+  </div>
+
+  <h2>Tarjetas de inicio rápido (presets)</h2>
+  <p class="origen">Nuevo en Adapta. Deriva de la tarjeta y de los perfiles de Mesures.</p>
+  <div class="presets">
+    <button type="button" class="preset"><strong>Examen para alumnado con dislexia, 2.º ciclo</strong><span class="meta"><span class="chip et">Prueba escrita</span><span class="chip">Alumno o alumna</span></span></button>
+    <button type="button" class="preset"><strong>Ficha accesible para todo el grupo (DUA)</strong><span class="meta"><span class="chip et">Ficha de trabajo</span><span class="chip">Grupo-clase</span></span></button>
+    <button type="button" class="preset"><strong>Ampliación para altas capacidades</strong><span class="meta"><span class="chip et">Actividad o tarea</span><span class="chip">Alumno o alumna</span></span></button>
+  </div>
+
+  <h2>Tarjetas de perfil</h2>
+  <p class="origen">Nuevo en Adapta: en Mesures los perfiles son píldoras; aquí necesitan desplegar barreras, estrategias y qué evitar.</p>
+  <div class="perf-grupo">
+    <h3>NEAE y NEE</h3>
+    <div class="perfil-card">
+      <label><input type="checkbox" checked><span><span class="nombre">TDAH o dificultades de atención y autorregulación</span><span class="desc">Le cuesta mantener la atención, organizarse y terminar tareas largas.</span></span></label>
+      <details>
+        <summary>Barreras, estrategias y qué evitar</summary>
+        <h4>Barreras previsibles</h4>
+        <ul><li>Instrucciones largas al inicio.</li><li>Páginas recargadas.</li></ul>
+        <h4>Estrategias</h4>
+        <ul><li>Bloques breves con un objetivo cada uno.</li><li>Lista de comprobación para autorregularse.</li></ul>
+        <h4>Qué evitar</h4>
+        <ul><li>Consignas que hay que recordar de ejercicios anteriores.</li></ul>
+      </details>
+    </div>
+    <div class="perfil-card">
+      <label><input type="checkbox"><span><span class="nombre">Dificultades específicas en lectura y escritura</span><span class="desc">Dislexia, disortografía: lee despacio o con errores y le cuesta escribir.</span></span></label>
+      <details><summary>Barreras, estrategias y qué evitar</summary><ul><li>Texto de ejemplo.</li></ul></details>
+    </div>
+  </div>
+
+  <h2>Formularios</h2>
+  <div class="card stack">
+    <div class="grid g2">
+      <label class="f">Curso
+        <select><option>3.º de Primaria</option><option>4.º de Primaria</option></select>
+      </label>
+      <label class="f">Área
+        <select><option>Lengua Castellana y Literatura</option><option>Matemáticas</option></select>
+      </label>
+    </div>
+    <label class="f">Contexto del grupo
+      <textarea aria-describedby="ctxHint" aria-invalid="true">Grupo de 22. Contacto: maria.garcia@ejemplo.es</textarea>
+    </label>
+    <p class="hint warn" id="ctxHint">Parece que hay un correo electrónico. No incluyas datos personales.</p>
+    <label class="f">Criterios de evaluación que deben mantenerse
+      <input type="text" placeholder="Cópialos de tu programación de aula">
+    </label>
+    <p class="hint">Cópialos de tu programación de aula.</p>
+    <div>
+      <label class="chk"><input type="checkbox" checked><span>Palabras clave en negrita <span class="tags"><span class="chip sug">Sugerida por el perfil TDAH</span></span></span></label>
+      <label class="chk"><input type="checkbox"><span>Glosario de vocabulario clave</span></label>
+      <label class="chk"><input type="checkbox" checked disabled><span>Mantener criterios de evaluación y exigencia competencial <span class="tags"><span class="chip">Siempre activa</span></span></span></label>
+    </div>
+  </div>
+
+  <h2>Avisos de coherencia</h2>
+  <p class="origen">Nuevo en Adapta. Deriva de la barra de sugerencias de Mesures. Cada severidad lleva icono y rótulo, no solo color.</p>
+  <div class="stack">
+    <div class="aviso critico" role="alert">
+      <svg class="i" aria-hidden="true"><use href="#i-stop"/></svg>
+      <div class="cuerpo"><span class="tipo">Crítico</span>
+        <p>Has elegido material para alumnado con ACIS, pero falta el curso o nivel de referencia curricular. No se puede copiar el prompt hasta indicarlo.</p>
+        <p class="norma">Orden 20/2019, art. 20.</p>
+      </div>
+    </div>
+    <div class="aviso atencion">
+      <svg class="i" aria-hidden="true"><use href="#i-warn"/></svg>
+      <div class="cuerpo"><span class="tipo">Aviso</span>
+        <p>En 1.er ciclo se priorizan la observación, los registros, las entrevistas orales y las rúbricas.</p>
+        <div class="fila"><button type="button" class="btn sm">Proponer instrumentos alternativos</button></div>
+      </div>
+    </div>
+    <div class="aviso info">
+      <svg class="i" aria-hidden="true"><use href="#i-info"/></svg>
+      <div class="cuerpo"><span class="tipo">Sugerencia</span>
+        <p>Si vas a adjuntar una foto, que sea nítida, recta y con buena luz, y que no aparezca ninguna persona.</p>
+      </div>
+    </div>
+    <div class="aviso ok">
+      <svg class="i" aria-hidden="true"><use href="#i-check"/></svg>
+      <div class="cuerpo"><span class="tipo">Correcto</span><p>Lista de privacidad completa. Ya puedes copiar el prompt.</p></div>
+    </div>
+  </div>
+
+  <h2>Lista de comprobación de privacidad</h2>
+  <div class="card">
+    <h3>Antes de copiar, comprueba el documento que vas a adjuntar</h3>
+    <label class="chk"><input type="checkbox" checked><span>He borrado o tapado el nombre del alumno o alumna y cualquier dato de la cabecera.</span></label>
+    <label class="chk"><input type="checkbox"><span>El documento no contiene notas, correcciones o calificaciones personales.</span></label>
+    <label class="chk"><input type="checkbox"><span>Si es una foto, no aparece ninguna persona ni otros datos.</span></label>
+  </div>
+
+  <h2>Panel del prompt</h2>
+  <p class="origen">Nuevo en Adapta. La cabecera reutiliza la de los bloques de medidas de Mesures.</p>
+  <section class="card prompt" aria-labelledby="promptT">
+    <header><h2 id="promptT">Tu prompt</h2><span class="cnt">412 palabras</span></header>
+    <pre class="prompt-txt" tabindex="0"><span class="sec">ROL</span>
+Actúa como especialista en inclusión educativa y Diseño Universal para el Aprendizaje (DUA) que adapta materiales para profesorado de Educación Primaria en un centro público de la Comunitat Valenciana.
+
+<span class="sec">TAREA</span>
+Te adjunto un documento original sin adaptar: <mark>prueba escrita</mark> de <mark>Lengua Castellana y Literatura</mark>, <mark>3.º de Primaria</mark>.
+Tu tarea es crear un documento NUEVO y COMPLETO, adaptado según las indicaciones de este mensaje.
+
+<span class="sec">MEDIDAS QUE DEBES APLICAR</span>
+Representación:
+- Escribe una consigna por frase y numera los pasos.
+- Destaca en negrita las palabras clave.</pre>
+    <div class="prompt-pie">
+      <button type="button" class="btn primary lg"><svg class="i" aria-hidden="true"><use href="#i-copy"/></svg>Copiar prompt</button>
+      <div class="fila" style="margin-top:8px">
+        <button type="button" class="btn ghost sm"><svg class="i" aria-hidden="true"><use href="#i-down"/></svg>Descargar .txt</button>
+        <button type="button" class="btn ghost sm"><svg class="i" aria-hidden="true"><use href="#i-reset"/></svg>Reiniciar</button>
+        <button type="button" class="btn ghost sm"><svg class="i" aria-hidden="true"><use href="#i-edit"/></svg>Editar manualmente</button>
+      </div>
+      <ol class="uso">
+        <li><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-chat"/></svg></span>1. Abre tu herramienta de IA</li>
+        <li><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-clip"/></svg></span>2. Adjunta el documento original</li>
+        <li><span class="ico"><svg class="i" aria-hidden="true"><use href="#i-send"/></svg></span>3. Pega el prompt y envía</li>
+      </ol>
+    </div>
+  </section>
+
+  <h2>Aviso emergente</h2>
+  <div class="toast" role="status"><span>Se han restablecido 4 opciones al bajar a Básico.</span><button type="button">Deshacer</button></div>
+
+  <footer class="pie">
+    <p>Funciona sin conexión · no se envía ni se guarda ningún dato del alumnado</p>
+    <p>Adapta forma parte de <a href="https://orienteca.es">orienteca.es</a> · Licencia EUPL-1.2</p>
+  </footer>
+</main>
+
+<script>
+  // Solo para la muestra: alternar tema, nivel y botones segmentados.
+  var raiz = document.documentElement;
+  var bTema = document.getElementById('bTema');
+  bTema.addEventListener('click', function () {
+    var oscuro = raiz.getAttribute('data-theme') === 'dark' ||
+      (!raiz.hasAttribute('data-theme') && matchMedia('(prefers-color-scheme: dark)').matches);
+    raiz.setAttribute('data-theme', oscuro ? 'light' : 'dark');
+    bTema.setAttribute('aria-pressed', String(!oscuro));
+    pintarPaleta();
+  });
+  document.querySelectorAll('.niveles-seg, .seg').forEach(function (grupo) {
+    grupo.addEventListener('click', function (e) {
+      var b = e.target.closest('button');
+      if (!b) return;
+      grupo.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      if (b.dataset.desc) document.getElementById('nivelesDesc').textContent = b.dataset.desc;
+    });
+  });
+  var TOKENS = ['--bg', '--surface', '--surface-2', '--text', '--muted', '--border', '--accent', '--accent-hover',
+    '--accent-soft', '--navy', '--sel', '--sug', '--sug-soft', '--val', '--val-soft', '--err', '--err-soft'];
+  function pintarPaleta() {
+    var cs = getComputedStyle(raiz);
+    document.getElementById('paleta').innerHTML = TOKENS.map(function (t) {
+      return '<div class="muestra-color"><i style="background:var(' + t + ')"></i><span>' + t + '</span><span>' +
+        cs.getPropertyValue(t).trim() + '</span></div>';
+    }).join('');
+  }
+  pintarPaleta();
+</script>
+</body>
+</html>

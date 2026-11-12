@@ -1,0 +1,23 @@
+# App de referencia visual (no forma parte de Adapta)
+referencia/
+
+# Dependencias y salida de compilación
+node_modules/
+dist/
+
+# Sistema y editor
+.DS_Store
+*.icloud
+.vscode/
+.idea/
+
+# Entorno local
+.env
+.env.*
+*.log
+
+# Configuración local de Claude Code
+.claude/
+
+# Encargo original (documento de trabajo, no se publica)
+SPEC_orienteca_adapta.md
